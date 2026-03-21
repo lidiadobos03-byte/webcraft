@@ -8,7 +8,8 @@ Proiectul este realizat integral în HTML, CSS și JavaScript vanilla, fără bu
 
 | Fișier | Rol |
 | --- | --- |
-| `portfolio.html` | Pagina principală a portofoliului WebCraft |
+| `index.html` | Pagina principală a portofoliului WebCraft |
+| `portfolio.html` | Redirect compatibil către pagina principală |
 | `1-restaurant-la-dolce-vita.html` | Concept premium pentru restaurant / fine dining |
 | `2-nexus-corp.html` | Concept corporate pentru consultanță strategică |
 | `3-velvet-store.html` | Concept e-commerce fashion / catalog premium |
@@ -30,6 +31,7 @@ Proiectul este realizat integral în HTML, CSS și JavaScript vanilla, fără bu
 ```text
 .
 ├── README.md
+├── index.html
 ├── portfolio.html
 ├── 1-restaurant-la-dolce-vita.html
 ├── 2-nexus-corp.html
@@ -58,7 +60,7 @@ Nu ai nevoie de `npm install` sau alt setup.
 1. Intră în folderul proiectului:
 
 ```bash
-cd /Users/lidiadobos/Desktop/webly
+cd /Users/lidiadobos/Desktop/webcraft
 ```
 
 2. Pornește un server static local:
@@ -70,14 +72,14 @@ python3 -m http.server 8000
 3. Deschide în browser:
 
 ```text
-http://localhost:8000/portfolio.html
+http://localhost:8000/
 ```
 
 Dacă vrei doar o verificare rapidă, poți deschide și fișierele HTML direct în browser, dar pentru testarea formularelor și a comportamentului apropiat de producție este recomandat un server local.
 
 ## Pagina principală
 
-Punctul de intrare al proiectului este `portfolio.html`, unde găsești:
+Punctul de intrare al proiectului este `index.html`, unde găsești:
 
 - hero section cu efecte animate și call-to-action
 - secțiuni pentru servicii, proces, portofoliu, prețuri și tehnologii
@@ -139,7 +141,7 @@ https://formsubmit.co/lidiadobos03@gmail.com
 
 Dacă vrei să schimbi adresa de destinație, înlocuiește această valoare în paginile care conțin formulare:
 
-- `portfolio.html`
+- `index.html`
 - `1-restaurant-la-dolce-vita.html`
 - `3-velvet-store.html`
 - `4-lex-partner.html`
@@ -181,7 +183,7 @@ Proiectul poate fi publicat pe orice hosting de fișiere statice:
 
 Nu există comandă de build.
 
-Dacă vrei ca pagina principală să fie deschisă automat la rădăcina domeniului, poți redenumi `portfolio.html` în `index.html`.
+Pagina principală este deja servită automat din `index.html`, deci proiectul este pregătit pentru GitHub Pages direct din rădăcina repo-ului.
 
 ## Observații utile
 
@@ -197,4 +199,3 @@ Acest proiect este bun ca:
 - bază de plecare pentru site-uri demo pe nișe diferite
 - showcase pentru vânzare de servicii web
 - colecție de landing pages statice premium
-
