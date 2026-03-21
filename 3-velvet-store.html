@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Velvet este un concept de magazin online premium de modă, cu accent pe imagine, produse curate, structură editorială și experiență vizuală de brand."/>
+<meta name="theme-color" content="#0d0612"/>
+<meta property="og:title" content="Velvet — Modă Premium Online"/>
+<meta property="og:description" content="E-commerce premium pentru fashion: imagini puternice, produse atent selectate și o experiență de brand coerentă."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>Velvet — Modă Premium Online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,500&amp;display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ClothingStore",
+  "name":"Velvet",
+  "description":"Magazin online premium de modă cu accent pe produse selectate, imagine puternică și experiență de brand coerentă.",
+  "telephone":"+40 740 334 757",
+  "areaServed":"Romania"
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+a,button,input,select,textarea{-webkit-tap-highlight-color:transparent;}
+:root{
+  --plum:#4b1f57;
+  --plum-deep:#1c0e24;
+  --violet:#8f4cf4;
+  --violet-soft:#d7b4ff;
+  --rose:#f5deef;
+  --ink:#0d0612;
+  --ink-soft:#140a1d;
+  --panel:#160c22;
+  --line:rgba(215,180,255,0.14);
+  --text:#f7f1ff;
+  --muted:#b8a1cf;
+  --muted-soft:#dbc9ef;
+  --hero-image:url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=80");
+  --featured-image:url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80");
+  --product-a:url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80");
+  --product-b:url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80");
+  --product-c:url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=80");
+  --product-d:url("https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1200&q=80");
+}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  background:
+    radial-gradient(circle at top right,rgba(143,76,244,0.15),transparent 30%),
+    linear-gradient(180deg,var(--ink) 0%,#09040d 100%);
+  color:var(--text);
+  font-family:'Raleway',sans-serif;
+  overflow-x:hidden;
+}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--violet-soft);
+  outline-offset:4px;
+}
+body.enhanced .reveal-section{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .75s ease,transform .75s ease;
+}
+body.enhanced .reveal-section.is-visible{
+  opacity:1;transform:translateY(0);
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+.announcement{
+  padding:.7rem 1rem;text-align:center;background:linear-gradient(90deg,var(--plum),var(--violet));
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:white;
+}
+nav{
+  position:sticky;top:0;z-index:20;background:rgba(13,6,18,0.84);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav-top{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:1rem 3rem;gap:1rem;
+}
+.nav-contact{font-size:.75rem;letter-spacing:.08em;color:var(--muted);}
+.nav-contact a{color:inherit;text-decoration:none;}
+.nav-logo{
+  text-align:center;font-family:'Tenor Sans',serif;font-size:1.6rem;letter-spacing:.28em;color:var(--text);
+}
+.nav-logo span{color:var(--violet-soft);}
+.nav-tools{
+  display:flex;justify-content:flex-end;gap:1.4rem;flex-wrap:wrap;
+}
+.nav-tools button{
+  background:transparent;border:none;color:var(--muted-soft);cursor:pointer;
+  font-family:'Raleway',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+}
+.nav-tools button:hover{color:var(--violet-soft);}
+.nav-cats{
+  display:flex;justify-content:center;gap:2.4rem;padding:.75rem 1rem;border-top:1px solid rgba(215,180,255,0.06);overflow-x:auto;
+}
+.nav-cats button{
+  background:transparent;border:none;color:var(--muted);cursor:pointer;
+  font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;padding-bottom:.35rem;font-family:'Raleway',sans-serif;
+}
+.nav-cats button.active,.nav-cats button:hover{color:var(--violet-soft);border-bottom:1px solid rgba(215,180,255,0.6);}
+section{padding:5rem 3rem;}
+.section-pre{
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--violet-soft);margin-bottom:.9rem;
+}
+.section-title{
+  font-family:'Tenor Sans',serif;font-size:clamp(2rem,4vw,3.3rem);
+  line-height:1.08;letter-spacing:.05em;margin-bottom:1rem;
+}
+.section-title span{color:var(--violet-soft);}
+.section-sub{
+  font-family:'Cormorant Garamond',serif;font-size:1.14rem;color:var(--muted);line-height:1.8;max-width:54ch;
+}
+#hero{
+  min-height:92vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,560px);gap:2rem;align-items:stretch;
+}
+.hero-copy{
+  display:flex;flex-direction:column;justify-content:center;padding:4rem 1rem 4rem 1rem;
+}
+.project-meta{
+  display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;
+  margin-bottom:1rem;
+}
+.project-return{
+  color:var(--muted);text-decoration:none;font-size:.68rem;
+  letter-spacing:.22em;text-transform:uppercase;transition:color .25s;
+}
+.project-return:hover{color:var(--violet-soft);}
+.project-badge{
+  padding:.38rem .78rem;border:1px solid rgba(215,180,255,0.18);
+  color:var(--violet-soft);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  background:rgba(215,180,255,0.05);
+}
+.hero-season{
+  font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:var(--violet-soft);
+  margin-bottom:1.2rem;letter-spacing:.12em;
+}
+.hero-title{
+  font-family:'Tenor Sans',serif;font-size:clamp(3rem,6vw,5.6rem);line-height:1.02;letter-spacing:.04em;margin-bottom:1.3rem;
+}
+.hero-title span{color:var(--violet-soft);}
+.hero-desc{
+  font-family:'Cormorant Garamond',serif;font-size:1.18rem;line-height:1.85;color:var(--muted-soft);max-width:30ch;margin-bottom:2rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
+.btn-primary,.btn-secondary{
+  border:none;cursor:pointer;font-family:'Raleway',sans-serif;transition:transform .25s,background .25s,border-color .25s,color .25s;
+  padding:.92rem 2rem;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--violet),#b06fff);color:white;font-weight:600;
+}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-secondary{
+  background:transparent;border:1px solid rgba(215,180,255,0.24);color:var(--muted-soft);
+}
+.btn-secondary:hover{border-color:rgba(215,180,255,0.5);color:var(--violet-soft);}
+.hero-trust{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;max-width:620px;
+}
+.trust-pill{
+  padding:1rem;border:1px solid var(--line);background:rgba(255,255,255,0.02);
+}
+.trust-pill strong{
+  display:block;font-size:.84rem;letter-spacing:.08em;margin-bottom:.25rem;
+}
+.trust-pill span{
+  display:block;font-size:.72rem;color:var(--muted);line-height:1.6;
+}
+.hero-visual{
+  min-height:88vh;position:relative;overflow:hidden;border:1px solid var(--line);
+  background:
+    linear-gradient(180deg,rgba(13,6,18,0.08),rgba(13,6,18,0.74)),
+    var(--hero-image) center/cover no-repeat;
+  box-shadow:0 24px 60px rgba(0,0,0,0.32);
+}
+.hero-visual::before{
+  content:'';position:absolute;inset:1rem;border:1px solid rgba(255,255,255,0.16);
+}
+.hero-index{
+  position:absolute;top:1.2rem;right:1.3rem;
+  font-family:'Tenor Sans',serif;font-size:5rem;line-height:1;
+  color:rgba(255,255,255,0.18);letter-spacing:.08em;
+}
+.hero-note{
+  position:absolute;left:1.4rem;bottom:1.4rem;right:1.4rem;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  padding:1.1rem 1.2rem;background:rgba(13,6,18,0.8);border:1px solid rgba(215,180,255,0.16);backdrop-filter:blur(16px);
+}
+.hero-note label{
+  display:block;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--violet-soft);margin-bottom:.3rem;
+}
+.hero-note strong{font-size:1rem;font-weight:600;}
+.brands{
+  display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;
+  padding:1.7rem 3rem;border-top:1px solid rgba(215,180,255,0.08);border-bottom:1px solid rgba(215,180,255,0.08);
+}
+.brands label{
+  font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);white-space:nowrap;
+}
+.brand-list{
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+}
+.brand-list span{
+  font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-style:italic;color:rgba(215,180,255,0.54);letter-spacing:.12em;
+}
+.products-head{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;
+}
+.filter-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:2rem;}
+.filter-row button{
+  background:transparent;border:1px solid rgba(215,180,255,0.12);color:var(--muted);
+  cursor:pointer;padding:.5rem 1.1rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-family:'Raleway',sans-serif;
+}
+.filter-row button.active,.filter-row button:hover{
+  border-color:rgba(215,180,255,0.4);color:var(--violet-soft);background:rgba(215,180,255,0.05);
+}
+.products-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;
+}
+.product-card{cursor:pointer;}
+.product-image{
+  aspect-ratio:3/4;position:relative;overflow:hidden;border:1px solid rgba(215,180,255,0.1);
+  background-size:cover;background-position:center;margin-bottom:1rem;
+}
+.product-image::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,6,18,0.04),rgba(13,6,18,0.56));
+}
+.product-badge{
+  position:absolute;top:.8rem;left:.8rem;z-index:2;padding:.3rem .65rem;
+  font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.24);background:rgba(13,6,18,0.7);
+}
+.product-meta{
+  position:absolute;left:.8rem;right:.8rem;bottom:.8rem;z-index:2;
+  display:flex;justify-content:space-between;gap:1rem;align-items:flex-end;
+}
+.product-meta span{
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-soft);
+}
+.product-title{font-size:.92rem;font-weight:600;margin-bottom:.28rem;}
+.product-brand{
+  font-family:'Cormorant Garamond',serif;font-size:.84rem;color:var(--muted);font-style:italic;margin-bottom:.45rem;
+}
+.price-row{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;}
+.price-current{font-size:1rem;font-weight:700;color:var(--violet-soft);}
+.price-old{font-size:.82rem;color:var(--muted);text-decoration:line-through;}
+.price-note{
+  font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-soft);
+  border:1px solid rgba(215,180,255,0.16);padding:.18rem .42rem;
+}
+#featured{
+  background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,560px);gap:2rem;align-items:stretch;
+}
+.featured-visual{
+  min-height:72vh;border:1px solid var(--line);background:
+    linear-gradient(180deg,rgba(13,6,18,0.08),rgba(13,6,18,0.72)),
+    var(--featured-image) center/cover no-repeat;
+}
+.featured-copy{
+  display:flex;flex-direction:column;justify-content:center;padding:1rem 0;
+}
+.featured-tag{
+  font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--violet-soft);margin-bottom:1rem;
+}
+.featured-desc{
+  font-family:'Cormorant Garamond',serif;font-size:1.12rem;line-height:1.85;color:var(--muted-soft);margin-bottom:2rem;
+}
+.featured-specs{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:2rem;
+}
+.featured-spec{
+  padding:1rem;border:1px solid var(--line);background:rgba(255,255,255,0.02);
+}
+.featured-spec strong{
+  display:block;font-size:1.35rem;color:var(--violet-soft);margin-bottom:.25rem;
+}
+.featured-spec span{
+  display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+.assurance-bar{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;
+  padding:0 3rem 5rem;
+}
+.assurance{
+  padding:1.5rem;border:1px solid rgba(215,180,255,0.08);background:rgba(255,255,255,0.02);
+}
+.assurance strong{
+  display:block;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--violet-soft);margin-bottom:.7rem;
+}
+.assurance p{
+  font-size:.84rem;line-height:1.7;color:var(--muted-soft);
+}
+.collection-nav{
+  padding:0 3rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.collection-card{
+  display:block;padding:1.4rem 1.5rem;text-decoration:none;color:var(--text);
+  border:1px solid rgba(215,180,255,0.1);background:rgba(255,255,255,0.02);
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.collection-card:hover{
+  transform:translateY(-3px);border-color:rgba(215,180,255,0.32);background:rgba(255,255,255,0.04);
+}
+.collection-card span{
+  display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--violet-soft);margin-bottom:.55rem;
+}
+.collection-card strong{
+  display:block;font-family:'Tenor Sans',serif;font-size:1.15rem;letter-spacing:.05em;
+}
+.collection-card p{
+  margin-top:.45rem;font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.7;color:var(--muted-soft);
+}
+footer{
+  padding:3.5rem 3rem 2rem;border-top:1px solid rgba(215,180,255,0.08);
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;
+}
+.footer-brand p{
+  margin-top:.9rem;font-size:.9rem;line-height:1.8;color:var(--muted);
+  max-width:42ch;
+}
+.newsletter{
+  margin-top:1.5rem;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0;
+}
+.newsletter input{
+  flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(215,180,255,0.14);color:var(--text);
+  padding:.82rem 1rem;font-family:'Raleway',sans-serif;font-size:.86rem;outline:none;
+}
+.newsletter button{
+  border:none;background:var(--violet);color:white;padding:.82rem 1.1rem;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;
+}
+.newsletter-status{
+  grid-column:1 / -1;margin-top:.8rem;font-size:.78rem;line-height:1.6;color:var(--muted);
+}
+.newsletter-status[data-state="success"]{color:var(--violet-soft);}
+.newsletter-status[data-state="error"]{color:#ffb8d7;}
+.footer-col h4{
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-soft);margin-bottom:1rem;
+}
+.footer-col ul{list-style:none;display:grid;gap:.55rem;}
+.footer-col a{
+  color:var(--muted);text-decoration:none;font-size:.84rem;transition:color .25s;
+}
+.footer-col a:hover{color:var(--violet-soft);}
+.footer-bottom{
+  padding-top:1.5rem;border-top:1px solid rgba(215,180,255,0.06);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.74rem;color:rgba(184,161,207,0.68);
+}
+@media(max-width:1100px){
+  #hero,#featured{grid-template-columns:1fr;}
+}
+@media(max-width:900px){
+  .nav-top{grid-template-columns:1fr;justify-items:center;padding:1rem 1.4rem;}
+  .nav-contact,.nav-tools{justify-content:center;}
+  section,.brands,.assurance-bar,footer,.collection-nav{padding-left:1.4rem;padding-right:1.4rem;}
+  .products-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .footer-top,.featured-specs,.assurance-bar,.hero-trust,.collection-nav{grid-template-columns:1fr;}
+  .brands{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .announcement{font-size:.66rem;letter-spacing:.12em;}
+  section,.brands,.assurance-bar,footer,.collection-nav{padding-left:1rem;padding-right:1rem;}
+  .nav-cats{justify-content:flex-start;padding-left:1rem;padding-right:1rem;}
+  .hero-copy{padding:2.5rem 0 2rem;}
+  .hero-actions{flex-direction:column;max-width:320px;}
+  .hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%;}
+  .nav-tools{gap:.8rem;}
+  .hero-note{left:1rem;right:1rem;bottom:1rem;}
+  .products-grid{grid-template-columns:1fr;}
+  .featured-visual{min-height:48vh;}
+  .newsletter{grid-template-columns:1fr;}
+  .newsletter button{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">Colecția primăvară-vară · selecție premium · livrare gratuită pentru comenzile peste 300 lei</div>
+
+<nav>
+  <div class="nav-top">
+    <div class="nav-contact">Concierge shopping · <a href="tel:+40740334757">0740 334 757</a></div>
+    <div class="nav-logo">VEL<span>VET</span></div>
+    <div class="nav-tools">
+      <button type="button">Căutare</button>
+      <button type="button">Wishlist</button>
+      <button type="button">Coș 03</button>
+    </div>
+  </div>
+  <div class="nav-cats">
+    <button class="active" type="button">Nou</button>
+    <button type="button">Femei</button>
+    <button type="button">Bărbați</button>
+    <button type="button">Accesorii</button>
+    <button type="button">Pantofi</button>
+    <button type="button">Sale</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-copy">
+    <div class="project-meta">
+      <a class="project-return" href="portfolio.html#portfolio">Înapoi la portofoliu</a>
+      <div class="project-badge">Project 03</div>
+    </div>
+    <div class="hero-season">Colecția Primăvară-Vară 2025</div>
+    <h1 class="hero-title">Stilul tău,<br><span>ridicat la rang</span><br>de semnătură.</h1>
+    <p class="hero-desc">Piese construite pentru garderobe care vor claritate, textură și prezență. Velvet selectează colecții premium cu accent pe croială, material și durabilitate vizuală.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Cumpără colecția</button>
+      <button class="btn-secondary" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">Edit-ul sezonului</button>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-pill"><strong>Retur 30 zile</strong><span>Proces simplu și preluare rapidă din adresă.</span></div>
+      <div class="trust-pill"><strong>Livrare gratuită</strong><span>Pentru coșuri premium și lansări capsule.</span></div>
+      <div class="trust-pill"><strong>Plată securizată</strong><span>Checkout optimizat și confirmări instant.</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-index">03</div>
+    <div class="hero-note">
+      <div>
+        <label>Favorita săptămânii</label>
+        <strong>Rochie sculpturală din satin greu</strong>
+      </div>
+      <div>
+        <label>Disponibilitate</label>
+        <strong>Stoc limitat în mărimile S-M</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="brands">
+  <label>Branduri selectate</label>
+  <div class="brand-list">
+    <span>Milano Studio</span>
+    <span>Atelier Est</span>
+    <span>Nordic Basics</span>
+    <span>Maison Velvet</span>
+    <span>Paris Edit</span>
+  </div>
+</div>
+
+<section id="products" class="reveal-section">
+  <div class="products-head">
+    <div>
+      <div class="section-pre">Selecție curentă</div>
+      <h2 class="section-title">Trending <span>acum</span></h2>
+      <p class="section-sub">Produse alese pentru prezență, versatilitate și capacitatea lor de a susține o garderobă coerentă, nu doar un sezon.</p>
+    </div>
+  </div>
+  <div class="filter-row">
+    <button class="active" type="button">Toate</button>
+    <button type="button">Rochii</button>
+    <button type="button">Outerwear</button>
+    <button type="button">Accesorii</button>
+    <button type="button">Evening</button>
+    <button type="button">Sale</button>
+  </div>
+  <div class="products-grid">
+    <article class="product-card">
+      <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');">
+        <div class="product-badge">Edit special</div>
+        <div class="product-meta"><span>Atelier capsule</span><span>Disponibil acum</span></div>
+      </div>
+      <div class="product-brand">Maison Velvet</div>
+      <div class="product-title">Rochie midi satin sculptural</div>
+      <div class="price-row">
+        <span class="price-current">249 lei</span>
+        <span class="price-old">415 lei</span>
+        <span class="price-note">-40%</span>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');">
+        <div class="product-badge">Nou</div>
+        <div class="product-meta"><span>Suede premium</span><span>Serie limitată</span></div>
+      </div>
+      <div class="product-brand">Atelier Est</div>
+      <div class="product-title">Geantă structured din piele întoarsă</div>
+      <div class="price-row">
+        <span class="price-current">189 lei</span>
+        <span class="price-note">Select</span>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');">
+        <div class="product-badge">Best seller</div>
+        <div class="product-meta"><span>Croială precisă</span><span>Restock săptămânal</span></div>
+      </div>
+      <div class="product-brand">Paris Edit</div>
+      <div class="product-title">Palton lung din lână compactă</div>
+      <div class="price-row">
+        <span class="price-current">549 lei</span>
+        <span class="price-old">899 lei</span>
+        <span class="price-note">-39%</span>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');">
+        <div class="product-badge">Wardrobe essential</div>
+        <div class="product-meta"><span>Daily luxury</span><span>Drop nou</span></div>
+      </div>
+      <div class="product-brand">Nordic Basics</div>
+      <div class="product-title">Set tailoring soft-touch</div>
+      <div class="price-row">
+        <span class="price-current">379 lei</span>
+        <span class="price-note">Limited</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="featured" class="reveal-section">
+  <div class="featured-visual"></div>
+  <div class="featured-copy">
+    <div class="featured-tag">Colecția vedetă a sezonului</div>
+    <h2 class="section-title">Velvet Signature<br><span>Collection</span></h2>
+    <p class="featured-desc">Un edit care pune împreună siluete curate, materiale tactile și culori cu profunzime. Fiecare piesă este aleasă pentru a funcționa atât în ținute statement, cât și în garderobe gândite pe termen lung.</p>
+    <div class="featured-specs">
+      <div class="featured-spec"><strong>34</strong><span>Piese selectate</span></div>
+      <div class="featured-spec"><strong>5</strong><span>Designeri invitați</span></div>
+      <div class="featured-spec"><strong>Capsule</strong><span>Ediție limitată</span></div>
+    </div>
+    <button class="btn-primary">Explorează edit-ul</button>
+  </div>
+</section>
+
+<div class="assurance-bar">
+  <article class="assurance">
+    <strong>01 · Livrare</strong>
+    <p>Curier premium în 24-48h pentru comenzile confirmate în aceeași zi.</p>
+  </article>
+  <article class="assurance">
+    <strong>02 · Retur</strong>
+    <p>30 de zile pentru probe și schimburi, fără fricțiune în proces.</p>
+  </article>
+  <article class="assurance">
+    <strong>03 · Checkout</strong>
+    <p>Flux de plată securizat și confirmări clare pentru fiecare comandă.</p>
+  </article>
+  <article class="assurance">
+    <strong>04 · Calitate</strong>
+    <p>Fiecare produs este verificat înainte de expediere și împachetat atent.</p>
+  </article>
+</div>
+
+<section class="collection-nav reveal-section">
+  <a class="collection-card" href="2-nexus-corp.html">
+    <span>Proiect anterior · 02</span>
+    <strong>Nexus Corp</strong>
+    <p>Revino la direcția corporate cu accent pe claritate și credibilitate executivă.</p>
+  </a>
+  <a class="collection-card" href="4-lex-partner.html">
+    <span>Următorul proiect · 04</span>
+    <strong>Lex Partner</strong>
+    <p>Continuă cu interpretarea juridică: autoritate, calm și structură impecabilă.</p>
+  </a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo" style="text-align:left;">VEL<span>VET</span></div>
+      <p>Modă premium pentru garderobe care caută coerență, textură și prezență. Livrăm în toată România și în principalele piețe europene.</p>
+      <form
+        class="newsletter"
+        action="https://formsubmit.co/lidiadobos03@gmail.com"
+        method="POST"
+        data-formsubmit
+        data-loading-message="Se trimite abonarea..."
+        data-progress-message="Îți înregistrez adresa în newsletter..."
+        data-success-message="Abonarea a fost înregistrată. Verifică inbox-ul pentru confirmare."
+        data-error-message="Nu am reușit să trimit abonarea. Încearcă din nou."
+        data-success-button="Abonat"
+      >
+        <input type="hidden" name="_subject" value="Velvet — abonare newsletter"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="sursa" value="Velvet Newsletter"/>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none;"/>
+        <input type="email" name="email" placeholder="adresa@email.ro" required autocomplete="email"/>
+        <button type="submit">Abonează-te</button>
+        <div class="newsletter-status" data-form-status aria-live="polite"></div>
+      </form>
+    </div>
+    <div class="footer-col">
+      <h4>Magazin</h4>
+      <ul>
+        <li><a href="#">Femei</a></li>
+        <li><a href="#">Bărbați</a></li>
+        <li><a href="#">Accesorii</a></li>
+        <li><a href="#">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ajutor</h4>
+      <ul>
+        <li><a href="#">Livrare &amp; Retur</a></li>
+        <li><a href="#">Ghid mărimi</a></li>
+        <li><a href="#">Urmărire comandă</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Companie</h4>
+      <ul>
+        <li><a href="#">Despre Velvet</a></li>
+        <li><a href="#">Sustenabilitate</a></li>
+        <li><a href="#">Cariere</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Velvet SRL · Toate drepturile rezervate</span>
+    <span>GDPR · Politică de confidențialitate · Termeni</span>
+  </div>
+</footer>
+
+<script src="forms.js"></script>
+<script>
+document.body.classList.add('enhanced');
+document.querySelectorAll('.nav-cats button').forEach(button=>{
+  button.addEventListener('click',()=>{
+    document.querySelectorAll('.nav-cats button').forEach(item=>item.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+document.querySelectorAll('.filter-row button').forEach(button=>{
+  button.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-row button').forEach(item=>item.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+const velvetObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');}
+  });
+},{threshold:.14});
+document.querySelectorAll('.reveal-section').forEach(section=>velvetObserver.observe(section));
+</script>
+</body>
+</html>

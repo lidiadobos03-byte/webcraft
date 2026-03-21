@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Lex Partner prezintă un cabinet de avocatură premium, cu accent pe autoritate, claritate, practică juridică solidă și contact confidențial."/>
+<meta name="theme-color" content="#071014"/>
+<meta property="og:title" content="Lex Partner — Cabinet de Avocatură București"/>
+<meta property="og:description" content="Website juridic premium pentru cabinet de avocatură, construit în jurul încrederii, structurii și autorității."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>Lex Partner — Cabinet de Avocatură București</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Libre+Baskerville:wght@400;700&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LegalService",
+  "name":"Lex Partner",
+  "description":"Cabinet de avocatură din București specializat în litigii civile, penale și comerciale.",
+  "telephone":"+40 740 334 757",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Str. Aviatorilor 22",
+    "addressLocality":"Bucuresti",
+    "addressCountry":"RO"
+  }
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+a,button,input,select,textarea{-webkit-tap-highlight-color:transparent;}
+:root{
+  --forest:#0f5e48;
+  --forest-deep:#0b4133;
+  --gold:#c0a15d;
+  --ink:#071014;
+  --ink-soft:#0d1820;
+  --panel:#0f1c23;
+  --panel-soft:#13232d;
+  --line:rgba(192,161,93,0.14);
+  --text:#edf4ef;
+  --muted:#a2b8ad;
+  --muted-soft:#c7d7cf;
+  --hero-image:url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80");
+  --about-image:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80");
+  --detail-image:url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1200&q=80");
+}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  background:
+    radial-gradient(circle at top left,rgba(15,94,72,0.12),transparent 34%),
+    linear-gradient(180deg,var(--ink) 0%,#04090c 100%);
+  color:var(--text);
+  font-family:'Lato',sans-serif;
+  overflow-x:hidden;
+}
+body.menu-open{overflow:hidden;}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:4px;
+}
+body.enhanced .reveal-section{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .75s ease,transform .75s ease;
+}
+body.enhanced .reveal-section.is-visible{
+  opacity:1;transform:translateY(0);
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 4rem;background:rgba(7,16,20,0.84);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(192,161,93,0.12);
+}
+.brand strong{
+  display:block;font-family:'Libre Baskerville',serif;font-size:1.05rem;letter-spacing:.08em;
+}
+.brand span{
+  display:block;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;
+}
+.nav-links{display:flex;gap:2.3rem;list-style:none;}
+.nav-links a{
+  color:var(--muted-soft);text-decoration:none;font-size:.8rem;letter-spacing:.08em;transition:color .25s;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-toggle{
+  display:none;
+  width:46px;height:46px;
+  align-items:center;justify-content:center;
+  background:transparent;
+  border:1px solid rgba(192,161,93,0.22);
+  color:var(--gold);
+  cursor:pointer;
+}
+.nav-toggle-box{display:grid;gap:5px;}
+.nav-toggle-line{
+  display:block;width:18px;height:1.5px;
+  background:currentColor;
+  transition:transform .25s ease,opacity .25s ease;
+}
+.mobile-menu{display:none;}
+.mobile-menu a{
+  color:var(--text);text-decoration:none;
+  font-size:.8rem;letter-spacing:.08em;
+}
+.mobile-menu .btn-primary{width:100%;}
+.btn-primary,.btn-secondary{
+  border:none;cursor:pointer;transition:transform .25s,background .25s,border-color .25s,color .25s;
+  padding:.86rem 1.8rem;font-family:'Lato',sans-serif;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--forest),#12755b);color:white;font-weight:700;
+}
+.btn-primary:hover{transform:translateY(-1px);}
+.btn-secondary{
+  background:transparent;border:1px solid rgba(192,161,93,0.22);color:var(--muted-soft);
+}
+.btn-secondary:hover{border-color:rgba(192,161,93,0.5);color:var(--gold);}
+section{padding:6rem 4rem;}
+.section-pre{
+  font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;
+}
+.section-title{
+  font-family:'Libre Baskerville',serif;font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1.12;margin-bottom:1rem;
+}
+.section-title em{font-style:italic;font-weight:400;color:var(--gold);}
+.section-sub{
+  font-family:'EB Garamond',serif;font-size:1.12rem;line-height:1.9;color:var(--muted-soft);max-width:58ch;
+}
+#hero{
+  min-height:100vh;padding:8rem 4rem 4rem;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,560px);
+  gap:3rem;align-items:center;
+}
+.hero-copy{padding-top:2rem;}
+.project-meta{
+  display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;
+  margin-bottom:1rem;
+}
+.project-return{
+  color:var(--muted);text-decoration:none;font-size:.68rem;
+  letter-spacing:.22em;text-transform:uppercase;transition:color .25s;
+}
+.project-return:hover{color:var(--gold);}
+.project-badge{
+  padding:.38rem .78rem;border:1px solid var(--line);
+  color:var(--gold);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  background:rgba(192,161,93,0.05);
+}
+.hero-kicker{
+  display:inline-block;padding:.45rem .9rem;border:1px solid var(--line);
+  color:var(--gold);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:1.5rem;background:rgba(192,161,93,0.05);
+}
+.hero-title{
+  font-family:'Libre Baskerville',serif;font-size:clamp(3rem,6vw,4.9rem);line-height:1.05;margin-bottom:1.4rem;
+}
+.hero-title em{font-style:italic;color:var(--gold);font-weight:400;}
+.hero-desc{
+  font-family:'EB Garamond',serif;font-size:1.18rem;line-height:1.92;color:var(--muted-soft);max-width:30ch;margin-bottom:2rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
+.hero-credentials{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;max-width:620px;
+}
+.credential{
+  padding:1.1rem;border:1px solid rgba(192,161,93,0.08);background:rgba(255,255,255,0.02);
+}
+.credential strong{
+  display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;
+}
+.credential span{
+  display:block;font-size:.88rem;line-height:1.65;color:var(--muted-soft);
+}
+.hero-visual{
+  display:grid;grid-template-rows:1.35fr auto;gap:1rem;
+}
+.hero-photo{
+  min-height:70vh;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(7,16,20,0.08),rgba(7,16,20,0.76)),
+    var(--hero-image) center/cover no-repeat;
+  box-shadow:0 24px 60px rgba(0,0,0,0.32);
+}
+.hero-photo::before{
+  content:'';position:absolute;inset:1rem;border:1px solid rgba(255,255,255,0.15);
+}
+.hero-index{
+  position:absolute;top:1.1rem;right:1.4rem;
+  font-family:'Libre Baskerville',serif;font-size:5rem;line-height:1;
+  color:rgba(192,161,93,0.18);
+}
+.hero-note{
+  position:absolute;left:1.4rem;right:1.4rem;bottom:1.4rem;
+  padding:1.2rem;background:rgba(7,16,20,0.82);border:1px solid rgba(192,161,93,0.14);backdrop-filter:blur(14px);
+}
+.hero-note label{
+  display:block;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem;
+}
+.hero-note p{
+  font-family:'EB Garamond',serif;font-size:1rem;line-height:1.75;color:var(--muted-soft);
+}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;
+}
+.stat{
+  padding:1.2rem;border:1px solid rgba(192,161,93,0.08);background:var(--panel);
+}
+.stat strong{
+  display:block;font-family:'Libre Baskerville',serif;font-size:1.9rem;color:var(--gold);line-height:1;
+}
+.stat span{
+  display:block;margin-top:.35rem;font-size:.76rem;line-height:1.6;color:var(--muted);
+}
+#services{background:rgba(255,255,255,0.015);}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:3rem;
+}
+.service-card{
+  padding:2rem;background:var(--panel);border:1px solid rgba(192,161,93,0.08);
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.service-card:hover{
+  transform:translateY(-4px);border-color:rgba(192,161,93,0.28);background:var(--panel-soft);
+}
+.service-index{
+  display:inline-block;margin-bottom:1.2rem;
+  font-family:'Libre Baskerville',serif;font-size:1.4rem;color:rgba(192,161,93,0.44);
+}
+.service-name{
+  font-family:'Libre Baskerville',serif;font-size:1.02rem;margin-bottom:.7rem;
+}
+.service-desc{
+  font-size:.88rem;line-height:1.8;color:var(--muted-soft);
+}
+#about{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,560px);gap:3rem;align-items:center;
+}
+.about-copy p{
+  font-family:'EB Garamond',serif;font-size:1.1rem;line-height:1.9;color:var(--muted-soft);margin-bottom:1rem;
+}
+.honors{
+  display:grid;gap:.8rem;margin-top:1.5rem;
+}
+.honor{
+  padding:1rem 1.1rem;border:1px solid rgba(192,161,93,0.1);background:rgba(255,255,255,0.02);
+  font-size:.86rem;line-height:1.7;color:var(--muted-soft);
+}
+.about-visual{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;
+}
+.about-photo-main,.about-photo-side{
+  min-height:520px;border:1px solid var(--line);background-size:cover;background-position:center;
+}
+.about-photo-main{
+  background-image:
+    linear-gradient(180deg,rgba(7,16,20,0.12),rgba(7,16,20,0.72)),
+    var(--about-image);
+}
+.about-side{
+  display:grid;grid-template-rows:1fr auto;gap:1rem;
+}
+.about-photo-side{
+  min-height:0;background-image:
+    linear-gradient(180deg,rgba(7,16,20,0.12),rgba(7,16,20,0.72)),
+    var(--detail-image);
+}
+.team-card{
+  padding:1.4rem;background:var(--panel);border:1px solid rgba(192,161,93,0.1);
+}
+.team-card h3{
+  font-family:'Libre Baskerville',serif;font-size:1.1rem;margin-bottom:.9rem;
+}
+.team-list{
+  display:grid;gap:.9rem;
+}
+.team-list div{
+  padding-bottom:.9rem;border-bottom:1px solid rgba(192,161,93,0.08);
+}
+.team-list strong{
+  display:block;font-size:.9rem;letter-spacing:.06em;margin-bottom:.25rem;
+}
+.team-list span{
+  display:block;font-size:.8rem;line-height:1.7;color:var(--muted);
+}
+#areas{background:rgba(255,255,255,0.015);}
+.areas-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:3rem;
+}
+.area-card{
+  padding:1.7rem;background:var(--panel);border:1px solid rgba(192,161,93,0.08);
+}
+.area-card strong{
+  display:block;font-family:'Libre Baskerville',serif;font-size:1.5rem;color:rgba(192,161,93,0.45);margin-bottom:.8rem;
+}
+.area-name{
+  font-family:'Libre Baskerville',serif;font-size:.98rem;margin-bottom:.55rem;
+}
+.area-desc{
+  font-size:.84rem;line-height:1.75;color:var(--muted-soft);margin-bottom:.8rem;
+}
+.area-count{
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+}
+#testimonials{
+  display:grid;grid-template-columns:320px minmax(0,1fr);gap:2rem;align-items:start;
+}
+.test-summary{
+  position:sticky;top:6rem;padding:1.8rem;background:var(--panel);border:1px solid rgba(192,161,93,0.1);
+}
+.test-summary strong{
+  display:block;font-family:'Libre Baskerville',serif;font-size:3.8rem;color:var(--gold);line-height:1;
+}
+.test-summary span{
+  display:block;margin-top:.45rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+.test-bars{margin-top:1.5rem;display:grid;gap:.8rem;}
+.test-bar{
+  display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;align-items:center;
+}
+.test-bar label{font-size:.74rem;color:var(--muted);}
+.test-bar-track{height:4px;background:rgba(255,255,255,0.06);}
+.test-bar-fill{height:100%;background:linear-gradient(90deg,var(--forest),var(--gold));}
+.test-list{display:grid;gap:1rem;}
+.testimonial{
+  padding:1.7rem;background:var(--panel);border:1px solid rgba(192,161,93,0.08);
+}
+.testimonial-head{
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;
+}
+.testimonial-head strong{
+  display:block;font-size:.92rem;letter-spacing:.05em;margin-bottom:.2rem;
+}
+.testimonial-head span{
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+}
+.testimonial-score{
+  font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--gold);
+}
+.testimonial p{
+  font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.9;color:var(--muted-soft);
+}
+#contact{background:rgba(255,255,255,0.015);}
+.contact-layout{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,460px);gap:3rem;align-items:start;
+}
+.contact-cards{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2rem;
+}
+.contact-card{
+  padding:1.2rem;background:var(--panel);border:1px solid rgba(192,161,93,0.08);
+}
+.contact-card label{
+  display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem;
+}
+.contact-card div{
+  font-family:'EB Garamond',serif;font-size:1rem;line-height:1.8;color:var(--text);
+}
+.contact-card a{color:inherit;text-decoration:none;}
+.contact-form{
+  padding:2rem;background:var(--panel-soft);border:1px solid rgba(192,161,93,0.12);
+}
+.contact-form h3{
+  font-family:'Libre Baskerville',serif;font-size:1.55rem;margin-bottom:.6rem;
+}
+.contact-form p{
+  font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:var(--muted-soft);margin-bottom:1.4rem;
+}
+.form-status{
+  margin-top:.85rem;font-size:.8rem;line-height:1.6;color:var(--muted);
+}
+.form-status[data-state="success"]{color:var(--gold);}
+.form-status[data-state="error"]{color:#ffbda7;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem;}
+.form-group label{
+  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.05rem;
+}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(192,161,93,0.12);
+  color:var(--text);padding:.78rem 1rem;font-family:'Lato',sans-serif;font-size:.9rem;outline:none;resize:none;appearance:none;-webkit-appearance:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(192,161,93,0.36);}
+.form-group select option{background:var(--panel-soft);}
+.map-panel{
+  margin-top:1rem;padding:1.2rem;border:1px solid rgba(192,161,93,0.08);background:rgba(255,255,255,0.02);
+}
+.map-panel strong{
+  display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem;
+}
+.map-panel span{
+  display:block;font-size:.86rem;line-height:1.7;color:var(--muted-soft);
+}
+.collection-nav{
+  padding:0 4rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.collection-card{
+  display:block;padding:1.4rem 1.5rem;text-decoration:none;color:var(--text);
+  border:1px solid rgba(192,161,93,0.1);background:rgba(255,255,255,0.02);
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.collection-card:hover{
+  transform:translateY(-3px);border-color:rgba(192,161,93,0.32);background:rgba(255,255,255,0.04);
+}
+.collection-card span{
+  display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;
+}
+.collection-card strong{
+  display:block;font-family:'Libre Baskerville',serif;font-size:1.15rem;
+}
+.collection-card p{
+  margin-top:.45rem;font-family:'EB Garamond',serif;font-size:1rem;line-height:1.75;color:var(--muted-soft);
+}
+footer{
+  padding:2.5rem 4rem;border-top:1px solid rgba(192,161,93,0.1);
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;
+}
+.footer-brand p{
+  margin-top:.8rem;max-width:42ch;font-size:.88rem;line-height:1.8;color:var(--muted);
+}
+.footer-badges{
+  display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem;
+}
+.footer-badges span{
+  padding:.28rem .7rem;border:1px solid rgba(192,161,93,0.16);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+}
+.footer-col h4{
+  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-soft);margin-bottom:1rem;
+}
+.footer-col ul{list-style:none;display:grid;gap:.55rem;}
+.footer-col a{
+  color:var(--muted);text-decoration:none;font-size:.84rem;transition:color .25s;
+}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{
+  margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(192,161,93,0.06);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.74rem;color:rgba(162,184,173,0.68);
+}
+@media(max-width:1100px){
+  #hero,#about,.contact-layout,#testimonials{grid-template-columns:1fr;}
+  .test-summary{position:static;}
+}
+@media(max-width:900px){
+  nav{padding:1rem 1.4rem;gap:1rem;flex-wrap:wrap;}
+  .nav-links{display:none;}
+  nav>.btn-primary{display:none;}
+  .nav-toggle{display:inline-flex;margin-left:auto;}
+  .mobile-menu{
+    display:none;
+    width:100%;
+    gap:.35rem;
+    padding-top:.9rem;
+    border-top:1px solid rgba(192,161,93,0.08);
+  }
+  nav.menu-open .mobile-menu{display:grid;}
+  nav.menu-open .nav-toggle-line:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  nav.menu-open .nav-toggle-line:nth-child(2){opacity:0;}
+  nav.menu-open .nav-toggle-line:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  .mobile-menu a{
+    padding:.85rem 0;
+    border-bottom:1px solid rgba(192,161,93,0.06);
+  }
+  section,#hero,footer,.collection-nav{padding-left:1.4rem;padding-right:1.4rem;}
+  .services-grid,.areas-grid,.contact-cards,.footer-grid,.hero-credentials,.hero-stats,.form-row,.about-visual,.collection-nav{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  section,#hero,footer,.collection-nav{padding-left:1rem;padding-right:1rem;}
+  #hero{padding-top:7rem;padding-bottom:3rem;}
+  .hero-actions{flex-direction:column;max-width:320px;}
+  .hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%;}
+  .hero-note{left:1rem;right:1rem;bottom:1rem;}
+  .contact-form,.service-card,.area-card,.testimonial,.test-summary,.team-card{padding:1.4rem;}
+  .footer-bottom{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">
+    <strong>LEX PARTNER</strong>
+    <span>Cabinet de avocatură</span>
+  </div>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Deschide meniul" data-nav-toggle>
+    <span class="nav-toggle-box" aria-hidden="true">
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#services">Servicii</a></li>
+    <li><a href="#about">Echipă</a></li>
+    <li><a href="#areas">Arii de practică</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Consultație inițială</button>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#services">Servicii</a>
+    <a href="#about">Echipă</a>
+    <a href="#areas">Arii de practică</a>
+    <a href="#contact">Contact</a>
+    <button class="btn-primary" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Consultație inițială</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-copy">
+    <div class="project-meta">
+      <a class="project-return" href="portfolio.html#portfolio">Înapoi la portofoliu</a>
+      <div class="project-badge">Project 04</div>
+    </div>
+    <div class="hero-kicker">București · din 2004</div>
+    <h1 class="hero-title">Reprezentare juridică<br><em>fermă</em>, calmă și<br>bine argumentată.</h1>
+    <p class="hero-desc">Lex Partner oferă asistență și reprezentare în litigii civile, penale și comerciale, cu o practică bazată pe rigoare, comunicare clară și control strategic al fiecărui dosar.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Programează o discuție</button>
+      <button class="btn-secondary" onclick="document.getElementById('areas').scrollIntoView({behavior:'smooth'})">Vezi expertiza</button>
+    </div>
+    <div class="hero-credentials">
+      <div class="credential"><strong>Baroul București</strong><span>Practicieni înscriși și activi în reprezentare și consultanță.</span></div>
+      <div class="credential"><strong>UNBR</strong><span>Standard profesional și conformitate cu normele de exercitare.</span></div>
+      <div class="credential"><strong>20 ani experiență</strong><span>Practica a fost construită pe cazuri cu miză personală și comercială reală.</span></div>
+      <div class="credential"><strong>Răspuns în 24h</strong><span>Evaluare inițială rapidă pentru dosare urgente sau sensibile.</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo">
+      <div class="hero-index">04</div>
+      <div class="hero-note">
+        <label>Poziția cabinetului</label>
+        <p>Construim dosare clare, susținute de analiză atentă și o relație transparentă cu clientul în toate etapele cauzei.</p>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>1.400+</strong><span>dosare gestionate în două decenii de practică</span></div>
+      <div class="stat"><strong>97%</strong><span>rată de succes în litigiile cu documentare completă</span></div>
+      <div class="stat"><strong>12</strong><span>avocați și colaboratori specializați</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="reveal-section">
+  <div class="section-pre">Servicii juridice</div>
+  <h2 class="section-title">Expertiză juridică aplicată,<br><em>nu doar teorie</em></h2>
+  <p class="section-sub">Intervenim acolo unde miza este ridicată: litigii, negocieri, protejarea patrimoniului și apărarea intereselor comerciale sau personale.</p>
+  <div class="services-grid">
+    <article class="service-card">
+      <div class="service-index">01</div>
+      <div class="service-name">Drept civil</div>
+      <p class="service-desc">Contracte, proprietăți, despăgubiri, succesiuni și litigii patrimoniale cu analiză documentară riguroasă.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">02</div>
+      <div class="service-name">Drept penal</div>
+      <p class="service-desc">Apărare în faza de urmărire penală și în instanță, cu strategie clară și pregătire procedurală atentă.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">03</div>
+      <div class="service-name">Drept comercial</div>
+      <p class="service-desc">Suport pentru companii în litigii, restructurări, negociere contractuală și procese de insolvență.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">04</div>
+      <div class="service-name">Dreptul familiei</div>
+      <p class="service-desc">Divorț, custodie, partaj și protejarea interesului minorului cu tact și fermitate procedurală.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">05</div>
+      <div class="service-name">Drept imobiliar</div>
+      <p class="service-desc">Tranzacții, revendicări, carte funciară, litigii de proprietate și evaluarea riscului juridic înainte de semnare.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">06</div>
+      <div class="service-name">Drept european și conformitate</div>
+      <p class="service-desc">Cauze CEDO, protecția datelor și chestiuni de conformitate pentru persoane fizice și companii.</p>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="reveal-section">
+  <div class="about-copy">
+    <div class="section-pre">Despre cabinet</div>
+    <h2 class="section-title">Douăzeci de ani de practică<br><em>orientată spre rezultat</em></h2>
+    <p>Lex Partner a fost construit ca un cabinet în care pregătirea juridică serioasă se întâlnește cu disciplina comunicării față de client. Credem că o reprezentare bună înseamnă nu doar argumente solide, ci și claritate asupra riscurilor, etapelor și șanselor reale.</p>
+    <p>De-a lungul anilor, am reprezentat atât persoane fizice aflate în situații sensibile, cât și companii care au avut nevoie de reacție rapidă, discreție și o poziție juridică foarte bine construită.</p>
+    <div class="honors">
+      <div class="honor">Top 10 cabinete de avocatură din București în clasamente de profil orientate spre litigii și practică civilă.</div>
+      <div class="honor">Recomandări constante în publicații juridice regionale pentru calitatea analizei și comunicarea cu clienții.</div>
+      <div class="honor">Dosare complexe gestionate cu echipe interdisciplinare și suport procedural complet.</div>
+    </div>
+  </div>
+  <div class="about-visual">
+    <div class="about-photo-main"></div>
+    <div class="about-side">
+      <div class="about-photo-side"></div>
+      <div class="team-card">
+        <h3>Echipa cheie</h3>
+        <div class="team-list">
+          <div><strong>Av. Dr. Alexandru Marin</strong><span>Partener fondator · Drept penal și litigii civile complexe</span></div>
+          <div><strong>Av. Ioana Constantin</strong><span>Partener senior · Drept comercial, restructurare și negocieri</span></div>
+          <div><strong>Av. Maria Dumitrescu</strong><span>Asociat · Drept european, conformitate și protecția datelor</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="areas" class="reveal-section">
+  <div class="section-pre">Arii de practică</div>
+  <h2 class="section-title">Domeniile în care lucrăm<br><em>cu frecvență și profunzime</em></h2>
+  <div class="areas-grid">
+    <article class="area-card">
+      <strong>01</strong>
+      <div class="area-name">Litigii civile</div>
+      <p class="area-desc">Contracte, proprietăți, despăgubiri și răspundere civilă.</p>
+      <div class="area-count">380+ dosare</div>
+    </article>
+    <article class="area-card">
+      <strong>02</strong>
+      <div class="area-name">Drept penal</div>
+      <p class="area-desc">Apărare, recursuri, reabilitare și reprezentare în dosare sensibile.</p>
+      <div class="area-count">290+ dosare</div>
+    </article>
+    <article class="area-card">
+      <strong>03</strong>
+      <div class="area-name">Drept comercial</div>
+      <p class="area-desc">Litigii societare, insolvență, contracte și interese comerciale.</p>
+      <div class="area-count">210+ mandate</div>
+    </article>
+    <article class="area-card">
+      <strong>04</strong>
+      <div class="area-name">Dreptul familiei</div>
+      <p class="area-desc">Divorț, custodie, partaj și măsuri de protecție pentru minori.</p>
+      <div class="area-count">320+ cauze</div>
+    </article>
+    <article class="area-card">
+      <strong>05</strong>
+      <div class="area-name">Drept imobiliar</div>
+      <p class="area-desc">Tranzacții, revendicări, carte funciară și evaluare de risc.</p>
+      <div class="area-count">180+ cazuri</div>
+    </article>
+    <article class="area-card">
+      <strong>06</strong>
+      <div class="area-name">Dreptul muncii</div>
+      <p class="area-desc">Concedieri, discriminare și litigii de drepturi salariale.</p>
+      <div class="area-count">160+ cauze</div>
+    </article>
+    <article class="area-card">
+      <strong>07</strong>
+      <div class="area-name">Drept european</div>
+      <p class="area-desc">Cauze CEDO, chestiuni de cetățenie și drepturi fundamentale.</p>
+      <div class="area-count">28 cauze CEDO</div>
+    </article>
+    <article class="area-card">
+      <strong>08</strong>
+      <div class="area-name">GDPR &amp; conformitate</div>
+      <p class="area-desc">Protecția datelor, politici interne și contracte tehnologice.</p>
+      <div class="area-count">90+ clienți</div>
+    </article>
+  </div>
+</section>
+
+<section id="testimonials" class="reveal-section">
+  <div class="test-summary">
+    <strong>4.9</strong>
+    <span>scor mediu din recenzii verificate</span>
+    <div class="test-bars">
+      <div class="test-bar"><label>Foarte bine</label><div class="test-bar-track"><div class="test-bar-fill" style="width:91%"></div></div><label>91%</label></div>
+      <div class="test-bar"><label>Bine</label><div class="test-bar-track"><div class="test-bar-fill" style="width:7%"></div></div><label>7%</label></div>
+      <div class="test-bar"><label>Moderat</label><div class="test-bar-track"><div class="test-bar-fill" style="width:2%"></div></div><label>2%</label></div>
+    </div>
+  </div>
+  <div class="test-list">
+    <article class="testimonial">
+      <div class="testimonial-head">
+        <div>
+          <strong>Mihai Popescu</strong>
+          <span>Litigiu civil câștigat</span>
+        </div>
+        <div class="testimonial-score">4.9</div>
+      </div>
+      <p>Am lucrat cu cabinetul într-un dosar succesoral complicat. Comunicarea a fost clară, iar strategia procesuală s-a construit cu răbdare și foarte multă precizie.</p>
+    </article>
+    <article class="testimonial">
+      <div class="testimonial-head">
+        <div>
+          <strong>Andrei Ionescu</strong>
+          <span>Drept comercial și insolvență</span>
+        </div>
+        <div class="testimonial-score">5.0</div>
+      </div>
+      <p>Într-o perioadă foarte dificilă pentru companie, am primit exact acel amestec rar de fermitate, luciditate și suport practic de care aveam nevoie.</p>
+    </article>
+    <article class="testimonial">
+      <div class="testimonial-head">
+        <div>
+          <strong>Cristina Munteanu</strong>
+          <span>Dreptul familiei</span>
+        </div>
+        <div class="testimonial-score">4.9</div>
+      </div>
+      <p>Dosarul meu a fost tratat cu discreție și respect. Am simțit permanent că există control asupra situației și că fiecare pas are un motiv bine explicat.</p>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="reveal-section">
+  <div class="contact-layout">
+    <div>
+      <div class="section-pre">Contact</div>
+      <h2 class="section-title">Programează o discuție<br><em>confidențială</em></h2>
+      <p class="section-sub">Pentru o evaluare inițială avem nevoie de câteva detalii de bază. Toate informațiile sunt tratate cu discreție și în limitele obligațiilor profesionale.</p>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <label>Sediu principal</label>
+          <div>Str. Aviatorilor 22, Sector 1, București</div>
+        </div>
+        <div class="contact-card">
+          <label>Telefon</label>
+          <div><a href="tel:+40740334757">0740 334 757</a></div>
+        </div>
+        <div class="contact-card">
+          <label>Email</label>
+          <div><a href="mailto:contact@lexpartner.ro">contact@lexpartner.ro</a></div>
+        </div>
+        <div class="contact-card">
+          <label>Program</label>
+          <div>Lun–Vin 09:00–18:00 · Urgențe 24/7</div>
+        </div>
+      </div>
+      <div class="map-panel">
+        <strong>Acces și întâlniri</strong>
+        <span>Consultațiile au loc la sediul din București sau online, în funcție de natura dosarului și disponibilitatea clientului.</span>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Solicită evaluarea inițială</h3>
+      <p>Completezi câteva informații esențiale, iar noi revenim pentru a stabili pașii următori.</p>
+      <form
+        action="https://formsubmit.co/lidiadobos03@gmail.com"
+        method="POST"
+        data-formsubmit
+        data-loading-message="Se trimite solicitarea..."
+        data-progress-message="Pregătesc trimiterea către cabinet..."
+        data-success-message="Solicitarea a fost trimisă. Dacă este prima folosire, confirmă și emailul de activare primit."
+        data-error-message="Nu am reușit să trimit solicitarea. Încearcă din nou."
+        data-success-button="Trimis"
+      >
+        <input type="hidden" name="_subject" value="Lex Partner — solicitare nouă de consultație"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="sursa" value="Lex Partner"/>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none;"/>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nume complet</label>
+            <input type="text" name="name" placeholder="Ion Popescu" required autocomplete="name"/>
+          </div>
+          <div class="form-group">
+            <label>Telefon</label>
+            <input type="tel" name="phone" placeholder="+40 7xx xxx xxx" required autocomplete="tel"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="email@exemplu.ro" required autocomplete="email"/>
+        </div>
+        <div class="form-group">
+          <label>Domeniu juridic</label>
+          <select name="legal_area" required>
+            <option value="" disabled selected>Selectează domeniul</option>
+            <option value="Drept civil">Drept civil</option>
+            <option value="Drept penal">Drept penal</option>
+            <option value="Drept comercial">Drept comercial</option>
+            <option value="Dreptul familiei">Dreptul familiei</option>
+            <option value="Drept imobiliar">Drept imobiliar</option>
+            <option value="Altul">Altul</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Descrie situația</label>
+          <textarea rows="5" name="message" placeholder="Câteva rânduri despre contextul juridic și obiectivul tău" required></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;" type="submit">Trimite solicitarea</button>
+        <div class="form-status" data-form-status aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="collection-nav reveal-section">
+  <a class="collection-card" href="3-velvet-store.html">
+    <span>Proiect anterior · 03</span>
+    <strong>Velvet Store</strong>
+    <p>Revino la direcția fashion pentru contrastul dintre atmosferă și produs.</p>
+  </a>
+  <a class="collection-card" href="portfolio.html#portfolio">
+    <span>Închide colecția</span>
+    <strong>Înapoi la portofoliu</strong>
+    <p>Te întorci la pagina principală, unde toate cele patru proiecte se citesc ca un ansamblu.</p>
+  </a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand">
+        <strong>LEX PARTNER</strong>
+        <span>Cabinet de avocatură</span>
+      </div>
+      <p>Practică juridică dedicată litigiilor civile, penale și comerciale, cu accent pe argumentare solidă, discreție și relație clară cu clientul.</p>
+      <div class="footer-badges">
+        <span>Baroul București</span>
+        <span>UNBR</span>
+        <span>Practica din 2004</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Servicii</h4>
+      <ul>
+        <li><a href="#services">Drept civil</a></li>
+        <li><a href="#services">Drept penal</a></li>
+        <li><a href="#services">Drept comercial</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Cabinet</h4>
+      <ul>
+        <li><a href="#about">Echipă</a></li>
+        <li><a href="#areas">Arii de practică</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Lex Partner SCA · Toate drepturile rezervate</span>
+    <span>Informațiile de pe acest site nu constituie consultanță juridică</span>
+  </div>
+ </footer>
+<script src="forms.js"></script>
+<script>
+document.body.classList.add('enhanced');
+const lexNav=document.querySelector('nav');
+const lexNavToggle=document.querySelector('[data-nav-toggle]');
+if(lexNav&&lexNavToggle){
+  const setLexMenuState=open=>{
+    lexNav.classList.toggle('menu-open',open);
+    document.body.classList.toggle('menu-open',open);
+    lexNavToggle.setAttribute('aria-expanded',String(open));
+    lexNavToggle.setAttribute('aria-label',open?'Închide meniul':'Deschide meniul');
+  };
+  const closeLexMenu=()=>setLexMenuState(false);
+  lexNavToggle.addEventListener('click',()=>setLexMenuState(!lexNav.classList.contains('menu-open')));
+  lexNav.querySelectorAll('.mobile-menu a,.mobile-menu button').forEach(el=>{
+    el.addEventListener('click',closeLexMenu);
+  });
+  window.addEventListener('resize',()=>{if(window.innerWidth>900)closeLexMenu();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLexMenu();});
+}
+const lexObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');}
+  });
+},{threshold:.14});
+document.querySelectorAll('.reveal-section').forEach(section=>lexObserver.observe(section));
+</script>
+</body>
+</html>

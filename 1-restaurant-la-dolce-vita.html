@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="La Dolce Vita este un concept de restaurant fine dining cu accent pe atmosferă, meniu de sezon, rezervări rapide și prezentare editorială premium."/>
+<meta name="theme-color" content="#110807"/>
+<meta property="og:title" content="La Dolce Vita — Restaurant Fine Dining"/>
+<meta property="og:description" content="Pagină premium pentru restaurant: atmosferă, meniu, galerie și rezervări într-un cadru vizual rafinat."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>La Dolce Vita — Restaurant Fine Dining</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Restaurant",
+  "name":"La Dolce Vita",
+  "servesCuisine":"Italian",
+  "telephone":"+40 740 334 757",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Str. Floreasca 42",
+    "addressLocality":"Bucuresti",
+    "addressCountry":"RO"
+  }
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+a,button,input,select,textarea{-webkit-tap-highlight-color:transparent;}
+:root{
+  --burgundy:#7e1720;
+  --burgundy-deep:#3d0c0f;
+  --gold:#d2b06a;
+  --gold-soft:#f0dfb8;
+  --ink:#110807;
+  --ink-soft:#1a0d0b;
+  --panel:#180c0a;
+  --panel-2:#21110d;
+  --text:#f5ead7;
+  --muted:#bea486;
+  --line:rgba(210,176,106,0.16);
+  --shadow:0 24px 60px rgba(0,0,0,0.35);
+  --hero-image:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80");
+  --gallery-a:url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80");
+  --gallery-b:url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80");
+  --gallery-c:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80");
+}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  background:
+    radial-gradient(circle at top left,rgba(210,176,106,0.08),transparent 38%),
+    linear-gradient(180deg,#140908 0%,#0d0605 100%);
+  color:var(--text);
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden;
+}
+body.menu-open{overflow:hidden;}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:4px;
+}
+body.enhanced .reveal-section{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .75s ease,transform .75s ease;
+}
+body.enhanced .reveal-section.is-visible{
+  opacity:1;transform:translateY(0);
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.15rem 4rem;
+  background:rgba(17,8,7,0.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav-links{display:flex;gap:2.4rem;list-style:none;}
+.nav-links a{
+  color:var(--muted);text-decoration:none;font-size:.76rem;
+  letter-spacing:.2em;text-transform:uppercase;transition:color .25s;
+}
+.nav-links a:hover{color:var(--gold-soft);}
+.nav-brand{text-align:center;}
+.nav-brand strong{
+  display:block;font-family:'Playfair Display',serif;
+  font-size:1.35rem;letter-spacing:.08em;color:var(--gold-soft);
+}
+.nav-brand span{
+  font-size:.58rem;letter-spacing:.4em;text-transform:uppercase;color:var(--muted);
+}
+.nav-actions{display:flex;align-items:center;gap:1.3rem;}
+.nav-toggle{
+  display:none;
+  width:46px;height:46px;
+  align-items:center;justify-content:center;
+  background:transparent;
+  border:1px solid rgba(210,176,106,0.2);
+  color:var(--gold-soft);
+  cursor:pointer;
+}
+.nav-toggle-box{display:grid;gap:5px;}
+.nav-toggle-line{
+  display:block;width:18px;height:1.5px;
+  background:currentColor;
+  transition:transform .25s ease,opacity .25s ease;
+}
+.mobile-menu{display:none;}
+.mobile-menu a{
+  color:var(--text);text-decoration:none;
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
+}
+.mobile-menu .btn-primary{width:100%;}
+.nav-contact{
+  font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--muted);
+  text-decoration:none;transition:color .25s;
+}
+.nav-contact:hover{color:var(--gold-soft);}
+.btn-primary,.btn-secondary{
+  border:none;cursor:pointer;transition:transform .25s,background .25s,color .25s,border-color .25s;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+  color:var(--ink);padding:.9rem 2rem;font-size:.74rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-secondary{
+  background:transparent;border:1px solid rgba(210,176,106,0.3);color:var(--text);
+  padding:.9rem 2rem;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold-soft);}
+section{padding:6rem 4rem;}
+.section-pre{
+  font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.section-title{
+  font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.4rem);
+  font-weight:700;line-height:1.08;margin-bottom:1rem;
+}
+.section-title em{font-style:italic;color:var(--gold-soft);}
+.section-sub{
+  font-family:'Cormorant Garamond',serif;font-size:1.14rem;
+  color:var(--muted);line-height:1.8;max-width:56ch;
+}
+#hero{
+  min-height:100vh;padding:8rem 4rem 4rem;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,560px);
+  gap:3rem;align-items:center;
+}
+.hero-copy{padding-top:2rem;}
+.project-meta{
+  display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;
+  margin-bottom:1rem;
+}
+.project-return{
+  color:var(--muted);text-decoration:none;font-size:.68rem;
+  letter-spacing:.22em;text-transform:uppercase;transition:color .25s;
+}
+.project-return:hover{color:var(--gold-soft);}
+.project-badge{
+  padding:.38rem .78rem;border:1px solid var(--line);
+  color:var(--gold);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  background:rgba(210,176,106,0.06);
+}
+.hero-kicker{
+  display:inline-block;padding:.45rem .9rem;border:1px solid var(--line);
+  color:var(--gold);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+  margin-bottom:1.5rem;background:rgba(210,176,106,0.06);
+}
+.hero-title{
+  font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.4rem);
+  line-height:1.02;font-weight:800;margin-bottom:1.3rem;
+}
+.hero-title em{font-style:italic;color:var(--gold-soft);font-weight:600;}
+.hero-desc{
+  font-family:'Cormorant Garamond',serif;font-size:1.24rem;
+  color:var(--muted);line-height:1.85;max-width:28ch;margin-bottom:2rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
+.hero-metrics{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;max-width:580px;
+}
+.metric{
+  padding:1.2rem;border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+}
+.metric-value{
+  font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold-soft);line-height:1;
+}
+.metric-label{
+  margin-top:.35rem;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+}
+.hero-visual{
+  min-height:78vh;border:1px solid var(--line);box-shadow:var(--shadow);position:relative;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(17,8,7,0.06),rgba(17,8,7,0.74)),
+    var(--hero-image) center/cover no-repeat;
+}
+.hero-visual::before{
+  content:'';position:absolute;inset:1.1rem;border:1px solid rgba(240,223,184,0.18);pointer-events:none;
+}
+.hero-index{
+  position:absolute;top:1.2rem;right:1.5rem;
+  font-family:'Playfair Display',serif;font-size:5rem;line-height:1;
+  color:rgba(240,223,184,0.18);
+}
+.hero-note{
+  position:absolute;right:1.6rem;bottom:1.6rem;
+  max-width:280px;padding:1.2rem 1.3rem;
+  background:rgba(17,8,7,0.82);border:1px solid var(--line);backdrop-filter:blur(16px);
+}
+.hero-note-label{
+  font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;
+}
+.hero-note p{
+  font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.7;color:var(--muted);
+}
+#menu{background:rgba(255,255,255,0.015);}
+.menu-header{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap;
+}
+.menu-tabs{display:flex;gap:.65rem;flex-wrap:wrap;}
+.menu-tab{
+  padding:.55rem 1rem;border:1px solid var(--line);background:transparent;color:var(--muted);
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .25s;
+}
+.menu-tab.active,.menu-tab:hover{border-color:rgba(210,176,106,0.42);color:var(--gold-soft);background:rgba(210,176,106,0.06);}
+.menu-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+}
+.menu-item{
+  padding:1.7rem 1.8rem;background:var(--panel);
+  border:1px solid rgba(210,176,106,0.08);
+  display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;
+}
+.menu-item-name{
+  font-family:'Playfair Display',serif;font-size:1.12rem;margin-bottom:.4rem;
+}
+.menu-item-desc{
+  font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.7;color:var(--muted);
+}
+.menu-item-badge{
+  display:inline-block;margin-top:.8rem;padding:.25rem .7rem;
+  border:1px solid rgba(210,176,106,0.24);font-size:.62rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+}
+.menu-item-price{
+  font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold-soft);white-space:nowrap;
+}
+#experience{padding-top:2rem;}
+.experience-grid{
+  display:grid;grid-template-columns:1.3fr .8fr;gap:1rem;align-items:stretch;
+}
+.gallery-large,.gallery-stack article{
+  position:relative;overflow:hidden;border:1px solid var(--line);min-height:280px;
+  background-size:cover;background-position:center;
+}
+.gallery-large{
+  min-height:560px;background-image:
+    linear-gradient(180deg,rgba(17,8,7,0.08),rgba(17,8,7,0.8)),
+    var(--gallery-a);
+}
+.gallery-stack{display:grid;grid-template-rows:1fr 1fr;gap:1rem;}
+.gallery-stack article:nth-child(1){
+  background-image:
+    linear-gradient(180deg,rgba(17,8,7,0.14),rgba(17,8,7,0.72)),
+    var(--gallery-b);
+}
+.gallery-stack article:nth-child(2){
+  background-image:
+    linear-gradient(180deg,rgba(17,8,7,0.14),rgba(17,8,7,0.72)),
+    var(--gallery-c);
+}
+.gallery-copy{
+  position:absolute;left:1.6rem;right:1.6rem;bottom:1.6rem;
+}
+.gallery-copy strong{
+  display:block;font-family:'Playfair Display',serif;font-size:1.35rem;margin-bottom:.45rem;
+}
+.gallery-copy p{
+  font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.7;color:var(--muted);
+}
+#reservation{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);}
+.reservation-layout{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,460px);
+  gap:3rem;align-items:start;
+}
+.reservation-copy{max-width:640px;}
+.reservation-panels{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2rem;
+}
+.info-card{
+  padding:1.4rem;background:var(--panel);border:1px solid rgba(210,176,106,0.08);
+}
+.info-card label{
+  display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;
+}
+.info-card div{
+  font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--text);line-height:1.7;
+}
+.info-card a{color:inherit;text-decoration:none;}
+.reserve-form{
+  padding:2rem;background:var(--panel-2);border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.reserve-form h3{
+  font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:.6rem;
+}
+.reserve-form p{
+  font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;
+}
+.form-status{
+  margin-top:.85rem;font-size:.8rem;line-height:1.6;color:var(--muted);
+}
+.form-status[data-state="success"]{color:var(--gold-soft);}
+.form-status[data-state="error"]{color:#ffc0a6;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem;}
+.form-group label{
+  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;background:rgba(255,255,255,0.02);border:1px solid rgba(210,176,106,0.12);
+  color:var(--text);padding:.78rem 1rem;font-family:'Montserrat',sans-serif;font-size:.88rem;
+  outline:none;transition:border-color .25s;resize:none;appearance:none;-webkit-appearance:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(210,176,106,0.42);}
+.form-group select option{background:var(--panel-2);}
+#testimonials{padding-top:2rem;}
+.testimonials-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2.5rem;
+}
+.testimonial{
+  padding:1.8rem;background:var(--panel);border:1px solid rgba(210,176,106,0.08);
+}
+.testimonial-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem;
+}
+.testimonial strong{
+  display:block;font-size:.88rem;letter-spacing:.08em;
+}
+.testimonial span{
+  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+}
+.testimonial-score{
+  font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold-soft);
+}
+.testimonial p{
+  font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.8;color:var(--muted);
+}
+.collection-nav{
+  padding:0 4rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.collection-card{
+  display:block;padding:1.4rem 1.5rem;text-decoration:none;color:var(--text);
+  border:1px solid var(--line);background:rgba(255,255,255,0.02);
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.collection-card:hover{
+  transform:translateY(-3px);border-color:rgba(210,176,106,0.34);background:rgba(255,255,255,0.04);
+}
+.collection-card span{
+  display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;
+}
+.collection-card strong{
+  display:block;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;
+}
+.collection-card p{
+  margin-top:.45rem;font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.7;color:var(--muted);
+}
+footer{
+  padding:2.4rem 4rem;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;
+}
+.footer-brand strong{
+  display:block;font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold-soft);
+}
+.footer-brand span{
+  font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);
+}
+.footer-copy{font-size:.72rem;color:rgba(190,164,134,0.66);text-align:center;}
+.footer-links{display:flex;gap:1.4rem;justify-content:flex-end;}
+.footer-links a{
+  color:var(--muted);text-decoration:none;font-size:.74rem;letter-spacing:.08em;transition:color .25s;
+}
+.footer-links a:hover{color:var(--gold-soft);}
+@media(max-width:1100px){
+  #hero,.reservation-layout,.experience-grid{grid-template-columns:1fr;}
+  .hero-visual{min-height:60vh;}
+}
+@media(max-width:900px){
+  nav{padding:1rem 1.4rem;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;}
+  .nav-links{display:none;}
+  .nav-brand{justify-self:center;}
+  .nav-actions .btn-primary,.nav-contact{display:none;}
+  .nav-toggle{display:inline-flex;}
+  .mobile-menu{
+    display:none;
+    grid-column:1 / -1;
+    gap:.35rem;
+    padding-top:.9rem;
+    border-top:1px solid rgba(210,176,106,0.08);
+  }
+  nav.menu-open .mobile-menu{display:grid;}
+  nav.menu-open .nav-toggle-line:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  nav.menu-open .nav-toggle-line:nth-child(2){opacity:0;}
+  nav.menu-open .nav-toggle-line:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  .mobile-menu a{
+    padding:.85rem 0;
+    border-bottom:1px solid rgba(210,176,106,0.06);
+  }
+  section,#hero,footer,.collection-nav{padding-left:1.4rem;padding-right:1.4rem;}
+  .menu-grid,.testimonials-grid,.reservation-panels{grid-template-columns:1fr;}
+  .form-row,footer,.collection-nav{grid-template-columns:1fr;}
+  .footer-copy{text-align:left;}
+  .footer-links{justify-content:flex-start;flex-wrap:wrap;}
+}
+@media(max-width:600px){
+  section,#hero,footer,.collection-nav{padding-left:1rem;padding-right:1rem;}
+  #hero{padding-top:7rem;padding-bottom:3rem;}
+  .hero-actions{flex-direction:column;max-width:320px;}
+  .hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%;}
+  .hero-metrics{grid-template-columns:1fr;}
+  .hero-note{left:1rem;right:1rem;bottom:1rem;max-width:none;}
+  .menu-item{flex-direction:column;}
+  .gallery-large{min-height:420px;}
+  .gallery-copy{left:1rem;right:1rem;bottom:1rem;}
+  .reserve-form,.testimonial,.service-card,.info-card,.menu-item{padding:1.4rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="#menu">Meniu</a></li>
+    <li><a href="#experience">Atmosferă</a></li>
+    <li><a href="#reservation">Rezervări</a></li>
+  </ul>
+  <div class="nav-brand">
+    <strong>La Dolce Vita</strong>
+    <span>Fine Dining · București</span>
+  </div>
+  <div class="nav-actions">
+    <a class="nav-contact" href="tel:+40740334757">0740 334 757</a>
+    <button class="btn-primary" onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Rezervă masă</button>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Deschide meniul" data-nav-toggle>
+      <span class="nav-toggle-box" aria-hidden="true">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#menu">Meniu</a>
+    <a href="#experience">Atmosferă</a>
+    <a href="#reservation">Rezervări</a>
+    <a href="tel:+40740334757">0740 334 757</a>
+    <button class="btn-primary" type="button" onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Rezervă masă</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-copy">
+    <div class="project-meta">
+      <a class="project-return" href="portfolio.html#portfolio">Înapoi la portofoliu</a>
+      <div class="project-badge">Project 01</div>
+    </div>
+    <div class="hero-kicker">Restaurant de autor · din 2012</div>
+    <h1 class="hero-title">Arta unei seri<br>care rămâne<br><em>în memorie</em></h1>
+    <p class="hero-desc">Bucătărie italiană contemporană, service atent și o atmosferă compusă ca un spectacol discret. Totul este gândit pentru o experiență care nu grăbește nimic.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">Rezervă acum</button>
+      <button class="btn-secondary" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Descoperă meniul</button>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric"><div class="metric-value">4.9</div><div class="metric-label">scor mediu clienți</div></div>
+      <div class="metric"><div class="metric-value">60</div><div class="metric-label">locuri în salon</div></div>
+      <div class="metric"><div class="metric-value">12</div><div class="metric-label">vinuri de semnătură</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-index">01</div>
+    <div class="hero-note">
+      <div class="hero-note-label">Experiența casei</div>
+      <p>Degustare în cinci acte, pairing de vinuri italiene și servire construită în ritmul unei seri lungi, elegante.</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="reveal-section">
+  <div class="menu-header">
+    <div>
+      <div class="section-pre">Bucătăria noastră</div>
+      <h2 class="section-title">Meniu de sezon,<br><em>compus cu finețe</em></h2>
+      <p class="section-sub">Selecția pune accent pe ingrediente impecabile, tehnică sigură și un plating care vorbește calm, fără excese.</p>
+    </div>
+    <div class="menu-tabs">
+      <button class="menu-tab active" type="button">Antipasti</button>
+      <button class="menu-tab" type="button">Primi</button>
+      <button class="menu-tab" type="button">Secondi</button>
+      <button class="menu-tab" type="button">Dolci</button>
+    </div>
+  </div>
+  <div class="menu-grid">
+    <article class="menu-item">
+      <div>
+        <div class="menu-item-name">Carpaccio di Manzo</div>
+        <div class="menu-item-desc">Vită maturată, rucola, parmezan 36 luni, ulei extravirgin și emulsie fină cu trufe negre.</div>
+        <span class="menu-item-badge">Selecția chef-ului</span>
+      </div>
+      <div class="menu-item-price">89 lei</div>
+    </article>
+    <article class="menu-item">
+      <div>
+        <div class="menu-item-name">Burrata Pugliese</div>
+        <div class="menu-item-desc">Burrata artizanală, tomate heirloom, busuioc proaspăt și pinoli crocanți.</div>
+      </div>
+      <div class="menu-item-price">72 lei</div>
+    </article>
+    <article class="menu-item">
+      <div>
+        <div class="menu-item-name">Tagliolini al Tartufo</div>
+        <div class="menu-item-desc">Paste proaspete trase în unt brun, cremă fină de parmigiano și trufe de sezon.</div>
+        <span class="menu-item-badge">Favoritul serii</span>
+      </div>
+      <div class="menu-item-price">118 lei</div>
+    </article>
+    <article class="menu-item">
+      <div>
+        <div class="menu-item-name">Filetto di Branzino</div>
+        <div class="menu-item-desc">Lup de mare cu fenicul confiat, sos de lămâie și unt alb, servit cu legume glazurate.</div>
+      </div>
+      <div class="menu-item-price">134 lei</div>
+    </article>
+  </div>
+</section>
+
+<section id="experience" class="reveal-section">
+  <div class="section-pre">Atmosferă</div>
+  <h2 class="section-title">Un interior care susține<br><em>ritmul unei seri bune</em></h2>
+  <p class="section-sub" style="margin-bottom:2.4rem;">Lumina, materialele și distanța dintre mese sunt gândite pentru conversație, discreție și o stare de confort care nu se impune, ci se așază firesc.</p>
+  <div class="experience-grid">
+    <article class="gallery-large">
+      <div class="gallery-copy">
+        <strong>Salon principal</strong>
+        <p>Tonuri calde, suprafețe mate, lumină joasă și o punere în scenă care lasă preparatele să fie punctul central.</p>
+      </div>
+    </article>
+    <div class="gallery-stack">
+      <article>
+        <div class="gallery-copy">
+          <strong>Meniu degustare</strong>
+          <p>Farfurii construite cu proporție și claritate, fără artificii vizuale inutile.</p>
+        </div>
+      </article>
+      <article>
+        <div class="gallery-copy">
+          <strong>Pairing de vinuri</strong>
+          <p>Selecție curată, orientată spre echilibru și acompaniere, nu spre exces.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="reservation" class="reveal-section">
+  <div class="reservation-layout">
+    <div class="reservation-copy">
+      <div class="section-pre">Rezervări</div>
+      <h2 class="section-title">Rezervă o masă pentru<br><em>o seară specială</em></h2>
+      <p class="section-sub">Confirmările sunt rapide, iar echipa poate pregăti mesele pentru aniversări, întâlniri private sau cine corporate într-un cadru discret.</p>
+      <div class="reservation-panels">
+        <div class="info-card">
+          <label>Adresă</label>
+          <div>Str. Floreasca 42, Sector 1, București</div>
+        </div>
+        <div class="info-card">
+          <label>Program</label>
+          <div>Lun–Joi 12:00–23:00<br/>Vin–Dum 12:00–00:00</div>
+        </div>
+        <div class="info-card">
+          <label>Salon privat</label>
+          <div>Disponibil pentru 20 de persoane, cu meniu personalizat și pairing.</div>
+        </div>
+        <div class="info-card">
+          <label>Contact rapid</label>
+          <div><a href="tel:+40740334757">0740 334 757</a><br/><a href="mailto:reservations@ladolcevita.ro">reservations@ladolcevita.ro</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="reserve-form">
+      <h3>Solicită rezervarea</h3>
+      <p>Completezi câteva detalii, iar noi revenim cu confirmarea în cel mai scurt timp.</p>
+      <form action="https://formsubmit.co/lidiadobos03@gmail.com"
+        method="POST"
+        data-formsubmit
+        data-loading-message="Trimit rezervarea..."
+        data-success-message="Rezervarea a fost trimisă. Dacă este prima folosire, confirmă și emailul de activare primit."
+        data-error-message="Nu am reușit să trimit rezervarea acum. Încearcă din nou în câteva momente.">
+        <input type="hidden" name="_subject" value="La Dolce Vita — solicitare nouă de rezervare"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="sursa" value="La Dolce Vita"/>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none"/>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nume</label>
+            <input type="text" name="name" placeholder="Ion Popescu" required/>
+          </div>
+          <div class="form-group">
+            <label>Telefon</label>
+            <input type="tel" name="phone" placeholder="+40 7xx xxx xxx" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="nume@email.ro" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Data</label>
+            <input type="date" name="date" required/>
+          </div>
+          <div class="form-group">
+            <label>Ora</label>
+            <select name="time" required>
+              <option>19:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+              <option>20:30</option>
+              <option>21:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Număr persoane</label>
+          <select name="guests" required>
+            <option>2 persoane</option>
+            <option>3-4 persoane</option>
+            <option>5-6 persoane</option>
+            <option>7+ persoane</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Detalii suplimentare</label>
+          <textarea rows="4" name="message" placeholder="Aniversare, alergii, preferință pentru salon sau terasă..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;" type="submit">Trimite solicitarea</button>
+        <div class="form-status" data-form-status aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="reveal-section">
+  <div class="section-pre">Oaspeți</div>
+  <h2 class="section-title">Recenzii care confirmă<br><em>experiența completă</em></h2>
+  <div class="testimonials-grid">
+    <article class="testimonial">
+      <div class="testimonial-head">
+        <div>
+          <strong>Alexandru M.</strong>
+          <span>Cină aniversară</span>
+        </div>
+        <div class="testimonial-score">4.9</div>
+      </div>
+      <p>Am venit pentru aniversarea noastră și totul a fost calibrat perfect: ritm, lumină, recomandări de vin și un serviciu prezent exact cât trebuie.</p>
+    </article>
+    <article class="testimonial">
+      <div class="testimonial-head">
+        <div>
+          <strong>Mihaela C.</strong>
+          <span>Seară de weekend</span>
+        </div>
+        <div class="testimonial-score">5.0</div>
+      </div>
+      <p>Locul are o eleganță matură, fără artificii. Preparatele sunt executate impecabil, iar deserturile sunt motive serioase să revii.</p>
+    </article>
+    <article class="testimonial">
+      <div class="testimonial-head">
+        <div>
+          <strong>Radu P.</strong>
+          <span>Eveniment privat</span>
+        </div>
+        <div class="testimonial-score">4.9</div>
+      </div>
+      <p>Am organizat o cină de business pentru 12 persoane. Discreție, control foarte bun al serviciului și o prezentare care a susținut impecabil întâlnirea.</p>
+    </article>
+  </div>
+</section>
+
+<section class="collection-nav reveal-section">
+  <a class="collection-card" href="portfolio.html#portfolio">
+    <span>WebCraft Selected</span>
+    <strong>Înapoi la portofoliu</strong>
+    <p>Revii la colecția completă și vezi toate cele patru direcții din showcase.</p>
+  </a>
+  <a class="collection-card" href="2-nexus-corp.html">
+    <span>Următorul proiect · 02</span>
+    <strong>Nexus Corp</strong>
+    <p>Continuă cu direcția corporate: consultanță, claritate și prezență executivă.</p>
+  </a>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <strong>La Dolce Vita</strong>
+    <span>Fine Dining · București</span>
+  </div>
+  <div class="footer-copy">© 2025 La Dolce Vita · Gastronomie italiană contemporană · Toate drepturile rezervate</div>
+  <div class="footer-links">
+    <a href="#menu">Meniu</a>
+    <a href="#experience">Atmosferă</a>
+    <a href="#reservation">Rezervări</a>
+    <a href="#hero">Sus</a>
+  </div>
+</footer>
+
+<script src="forms.js"></script>
+<script>
+document.body.classList.add('enhanced');
+document.querySelectorAll('.menu-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.menu-tab').forEach(item=>item.classList.remove('active'));
+    tab.classList.add('active');
+  });
+});
+const ldvNav=document.querySelector('nav');
+const ldvNavToggle=document.querySelector('[data-nav-toggle]');
+if(ldvNav&&ldvNavToggle){
+  const setLdVMenuState=open=>{
+    ldvNav.classList.toggle('menu-open',open);
+    document.body.classList.toggle('menu-open',open);
+    ldvNavToggle.setAttribute('aria-expanded',String(open));
+    ldvNavToggle.setAttribute('aria-label',open?'Închide meniul':'Deschide meniul');
+  };
+  const closeLdVMenu=()=>setLdVMenuState(false);
+  ldvNavToggle.addEventListener('click',()=>setLdVMenuState(!ldvNav.classList.contains('menu-open')));
+  ldvNav.querySelectorAll('.mobile-menu a,.mobile-menu button').forEach(el=>{
+    el.addEventListener('click',closeLdVMenu);
+  });
+  window.addEventListener('resize',()=>{if(window.innerWidth>900)closeLdVMenu();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLdVMenu();});
+}
+const ldvObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');}
+  });
+},{threshold:.14});
+document.querySelectorAll('.reveal-section').forEach(section=>ldvObserver.observe(section));
+</script>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Nexus Corp prezintă o direcție corporate premium pentru consultanță strategică, growth, digitalizare și implementare orientată pe rezultate."/>
+<meta name="theme-color" content="#07111f"/>
+<meta property="og:title" content="Nexus Corp — Consultanță &amp; Strategie de Business"/>
+<meta property="og:description" content="Website corporate premium pentru consultanță strategică, structură executivă și poziționare clară."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<title>Nexus Corp — Consultanță &amp; Strategie de Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=DM+Serif+Display:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Nexus Corp",
+  "description":"Firmă de consultanță strategică pentru companii în creștere, cu servicii de strategie, growth și transformare digitală.",
+  "areaServed":"Romania",
+  "serviceType":["Strategie de business","Growth consulting","Digital transformation"]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+a,button,input,select,textarea{-webkit-tap-highlight-color:transparent;}
+:root{
+  --navy:#07111f;
+  --navy-deep:#030914;
+  --panel:#0c1728;
+  --panel-soft:#101e33;
+  --line:rgba(96,161,255,0.14);
+  --blue:#2b6df6;
+  --blue-soft:#8cb6ff;
+  --cyan:#8fe3ff;
+  --text:#edf3ff;
+  --muted:#88a1c4;
+  --muted-soft:#b8cae6;
+  --hero-image:url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+  --about-image:url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80");
+  --detail-image:url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80");
+}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  background:
+    radial-gradient(circle at top right,rgba(43,109,246,0.12),transparent 30%),
+    linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+body.menu-open{overflow:hidden;}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:4px;
+}
+body.enhanced .reveal-section{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .75s ease,transform .75s ease;
+}
+body.enhanced .reveal-section.is-visible{
+  opacity:1;transform:translateY(0);
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;opacity:.045;
+  background-image:
+    linear-gradient(rgba(140,182,255,0.15) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(140,182,255,0.15) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:30;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 4rem;background:rgba(3,9,20,0.82);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.brand{
+  font-size:1.08rem;font-weight:700;letter-spacing:.12em;color:var(--text);
+}
+.brand span{color:var(--cyan);}
+.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links a{
+  color:var(--muted);text-decoration:none;font-size:.8rem;
+  letter-spacing:.1em;transition:color .25s;
+}
+.nav-links a:hover{color:var(--cyan);}
+.nav-actions{display:flex;gap:.8rem;}
+.nav-toggle{
+  display:none;
+  width:46px;height:46px;
+  align-items:center;justify-content:center;
+  background:transparent;
+  border:1px solid rgba(140,182,255,0.22);
+  color:var(--cyan);
+  cursor:pointer;
+}
+.nav-toggle-box{display:grid;gap:5px;}
+.nav-toggle-line{
+  display:block;width:18px;height:1.5px;
+  background:currentColor;
+  transition:transform .25s ease,opacity .25s ease;
+}
+.mobile-menu{display:none;}
+.mobile-menu a{
+  color:var(--text);text-decoration:none;
+  font-size:.78rem;letter-spacing:.1em;
+}
+.mobile-menu .btn-fill{width:100%;}
+.btn-outline,.btn-fill{
+  border:none;cursor:pointer;transition:transform .25s,background .25s,border-color .25s,color .25s;
+  padding:.78rem 1.45rem;font-size:.78rem;font-family:'Inter',sans-serif;
+  display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+}
+.btn-outline{
+  background:transparent;border:1px solid rgba(140,182,255,0.22);color:var(--muted-soft);
+}
+.btn-outline:hover{border-color:rgba(143,227,255,0.5);color:var(--cyan);}
+.btn-fill{
+  background:linear-gradient(135deg,var(--blue),#4a88ff);color:white;font-weight:600;
+}
+.btn-fill:hover{transform:translateY(-1px);}
+section{padding:6rem 4rem;}
+.section-tag{
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.25em;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:.8rem;
+}
+.section-title{
+  font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.5rem);
+  font-weight:400;line-height:1.08;margin-bottom:1rem;
+}
+.section-title em{font-style:italic;color:var(--cyan);}
+.section-sub{
+  font-size:.98rem;line-height:1.85;color:var(--muted-soft);max-width:58ch;
+}
+#hero{
+  min-height:100vh;padding:8rem 4rem 4rem;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,560px);
+  gap:3rem;align-items:center;
+}
+.hero-copy{position:relative;z-index:2;}
+.project-meta{
+  display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;
+  margin-bottom:1rem;
+}
+.project-return{
+  color:var(--muted);text-decoration:none;font-size:.68rem;
+  letter-spacing:.22em;text-transform:uppercase;transition:color .25s;
+}
+.project-return:hover{color:var(--cyan);}
+.project-badge{
+  padding:.38rem .78rem;border:1px solid rgba(140,182,255,0.18);
+  color:var(--cyan);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  background:rgba(143,227,255,0.03);
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.7rem;
+  padding:.45rem .9rem;border:1px solid rgba(140,182,255,0.18);
+  font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);
+  margin-bottom:1.5rem;background:rgba(143,227,255,0.03);
+}
+.hero-title{
+  font-family:'DM Serif Display',serif;font-size:clamp(3rem,6vw,5rem);
+  line-height:1.02;font-weight:400;margin-bottom:1.3rem;
+}
+.hero-title em{font-style:italic;color:var(--cyan);}
+.hero-desc{
+  font-size:1rem;color:var(--muted-soft);line-height:1.9;
+  max-width:56ch;margin-bottom:2rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
+.hero-metrics{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;max-width:620px;
+}
+.metric{
+  padding:1.2rem;border:1px solid var(--line);background:rgba(255,255,255,0.02);
+}
+.metric strong{
+  display:block;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--cyan);line-height:1;
+}
+.metric span{
+  display:block;margin-top:.3rem;font-size:.74rem;letter-spacing:.08em;color:var(--muted);
+}
+.hero-visual{
+  display:grid;grid-template-rows:1.3fr auto;gap:1rem;
+}
+.hero-photo{
+  min-height:68vh;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(7,17,31,0.08),rgba(7,17,31,0.78)),
+    var(--hero-image) center/cover no-repeat;
+  box-shadow:0 24px 60px rgba(0,0,0,0.34);
+}
+.hero-photo::before{
+  content:'';position:absolute;inset:1rem;border:1px solid rgba(143,227,255,0.18);pointer-events:none;
+}
+.hero-index{
+  position:absolute;top:1.1rem;right:1.3rem;
+  font-family:'DM Serif Display',serif;font-size:5rem;line-height:1;
+  color:rgba(143,227,255,0.18);
+}
+.hero-badge{
+  position:absolute;left:1.4rem;bottom:1.4rem;
+  padding:1rem 1.2rem;background:rgba(7,17,31,0.82);
+  border:1px solid rgba(140,182,255,0.2);backdrop-filter:blur(16px);
+}
+.hero-badge label{
+  display:block;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:.4rem;
+}
+.hero-badge strong{
+  display:block;font-size:1rem;font-weight:600;
+}
+.hero-panels{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.panel{
+  padding:1.25rem;border:1px solid var(--line);background:var(--panel);
+}
+.panel label{
+  display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;
+}
+.panel strong{
+  display:block;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--cyan);font-weight:400;line-height:1;
+}
+.panel p{
+  margin-top:.45rem;font-size:.82rem;line-height:1.7;color:var(--muted-soft);
+}
+#services{background:rgba(255,255,255,0.015);}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;margin-top:3rem;
+}
+.service-card{
+  padding:2rem;background:var(--panel);border:1px solid rgba(140,182,255,0.08);
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.service-card:hover{
+  transform:translateY(-4px);border-color:rgba(143,227,255,0.28);background:var(--panel-soft);
+}
+.service-index{
+  display:inline-block;margin-bottom:1.2rem;
+  font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.28em;color:var(--cyan);
+}
+.service-name{
+  font-size:1.06rem;font-weight:600;margin-bottom:.75rem;
+}
+.service-desc{
+  font-size:.9rem;color:var(--muted-soft);line-height:1.75;
+}
+#about{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,540px);
+  gap:3rem;align-items:center;
+}
+.about-visual{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;
+}
+.about-photo-main,.about-photo-secondary{
+  border:1px solid var(--line);overflow:hidden;min-height:480px;
+  background-size:cover;background-position:center;
+}
+.about-photo-main{
+  background-image:
+    linear-gradient(180deg,rgba(7,17,31,0.1),rgba(7,17,31,0.72)),
+    var(--about-image);
+}
+.about-photo-secondary{
+  min-height:0;background-image:
+    linear-gradient(180deg,rgba(7,17,31,0.16),rgba(7,17,31,0.72)),
+    var(--detail-image);
+}
+.about-aside{
+  display:grid;grid-template-rows:1fr auto;gap:1rem;
+}
+.about-note,.about-stats{
+  padding:1.4rem;border:1px solid var(--line);background:var(--panel);
+}
+.about-note p,.about-copy p{
+  font-size:.95rem;color:var(--muted-soft);line-height:1.85;
+}
+.about-note label{
+  display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:.6rem;
+}
+.about-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.about-stat strong{
+  display:block;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--cyan);font-weight:400;
+}
+.about-stat span{
+  display:block;margin-top:.3rem;font-size:.74rem;color:var(--muted);
+}
+.about-copy ul{
+  list-style:none;margin-top:1.6rem;display:grid;gap:.9rem;
+}
+.about-copy li{
+  padding:1rem 1.1rem;border:1px solid rgba(140,182,255,0.08);background:rgba(255,255,255,0.02);
+  font-size:.9rem;color:var(--muted-soft);line-height:1.7;
+}
+#process{background:rgba(255,255,255,0.015);}
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:3rem;
+}
+.process-card{
+  padding:1.8rem;background:var(--panel);border:1px solid rgba(140,182,255,0.08);
+}
+.process-number{
+  display:block;font-family:'DM Serif Display',serif;font-size:2.5rem;color:rgba(143,227,255,0.32);line-height:1;margin-bottom:.9rem;
+}
+.process-title{font-size:1rem;font-weight:600;margin-bottom:.6rem;}
+.process-desc{font-size:.86rem;line-height:1.7;color:var(--muted-soft);}
+#cta{
+  text-align:center;background:
+    radial-gradient(circle at center,rgba(43,109,246,0.16),transparent 44%),
+    linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+}
+.cta-title{
+  font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,4.2rem);font-weight:400;line-height:1.08;margin-bottom:1rem;
+}
+.cta-title em{font-style:italic;color:var(--cyan);}
+.cta-sub{font-size:1rem;color:var(--muted-soft);line-height:1.8;max-width:52ch;margin:0 auto 2rem;}
+.cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+footer{
+  padding:2.5rem 4rem;border-top:1px solid rgba(140,182,255,0.08);
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;
+}
+.footer-copy{
+  margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(140,182,255,0.08);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.74rem;color:rgba(136,161,196,0.72);
+}
+.footer-col h4{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-soft);margin-bottom:1rem;
+}
+.footer-col ul{list-style:none;display:grid;gap:.55rem;}
+.footer-col a{color:var(--muted);text-decoration:none;font-size:.82rem;transition:color .25s;}
+.footer-col a:hover{color:var(--cyan);}
+.footer-brand p{
+  margin-top:.8rem;max-width:42ch;font-size:.9rem;line-height:1.75;color:var(--muted);
+}
+.collection-nav{
+  padding:0 4rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.collection-card{
+  display:block;padding:1.4rem 1.5rem;text-decoration:none;color:var(--text);
+  border:1px solid rgba(140,182,255,0.1);background:rgba(255,255,255,0.02);
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.collection-card:hover{
+  transform:translateY(-3px);border-color:rgba(143,227,255,0.32);background:rgba(255,255,255,0.04);
+}
+.collection-card span{
+  display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:.55rem;
+}
+.collection-card strong{
+  display:block;font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;
+}
+.collection-card p{
+  margin-top:.45rem;font-size:.9rem;line-height:1.7;color:var(--muted-soft);
+}
+@media(max-width:1100px){
+  #hero,#about{grid-template-columns:1fr;}
+}
+@media(max-width:900px){
+  nav{padding:1rem 1.4rem;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;}
+  .nav-links{display:none;}
+  .brand{justify-self:center;}
+  .nav-actions .btn-outline,.nav-actions .btn-fill{display:none;}
+  .nav-toggle{display:inline-flex;}
+  .mobile-menu{
+    display:none;
+    grid-column:1 / -1;
+    gap:.35rem;
+    padding-top:.9rem;
+    border-top:1px solid rgba(140,182,255,0.08);
+  }
+  nav.menu-open .mobile-menu{display:grid;}
+  nav.menu-open .nav-toggle-line:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  nav.menu-open .nav-toggle-line:nth-child(2){opacity:0;}
+  nav.menu-open .nav-toggle-line:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  .mobile-menu a{
+    padding:.85rem 0;
+    border-bottom:1px solid rgba(140,182,255,0.06);
+  }
+  section,#hero,footer,.collection-nav{padding-left:1.4rem;padding-right:1.4rem;}
+  .services-grid,.process-grid,.footer-grid,.hero-metrics,.hero-panels,.about-visual,.about-stats,.collection-nav{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  section,#hero,footer,.collection-nav{padding-left:1rem;padding-right:1rem;}
+  #hero{padding-top:7rem;padding-bottom:3rem;}
+  .hero-actions{flex-direction:column;max-width:320px;}
+  .hero-actions .btn-fill,.hero-actions .btn-outline{width:100%;}
+  .cta-actions{flex-direction:column;max-width:320px;margin:0 auto;}
+  .cta-actions .btn-fill,.cta-actions .btn-outline{width:100%;}
+  .hero-photo{min-height:54vh;}
+  .hero-badge{left:1rem;right:1rem;bottom:1rem;}
+  .panel,.service-card,.process-card,.about-note,.about-stats{padding:1.4rem;}
+  .footer-copy{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">NEXUS<span>CORP</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Servicii</a></li>
+    <li><a href="#about">Despre</a></li>
+    <li><a href="#process">Proces</a></li>
+    <li><a href="#cta">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-outline">Autentificare</button>
+    <button class="btn-fill" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Solicită ofertă</button>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Deschide meniul" data-nav-toggle>
+      <span class="nav-toggle-box" aria-hidden="true">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#services">Servicii</a>
+    <a href="#about">Despre</a>
+    <a href="#process">Proces</a>
+    <a href="#cta">Contact</a>
+    <button class="btn-fill" type="button" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Solicită ofertă</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-copy">
+    <div class="project-meta">
+      <a class="project-return" href="portfolio.html#portfolio">Înapoi la portofoliu</a>
+      <div class="project-badge">Project 02</div>
+    </div>
+    <div class="hero-eyebrow">Consultanță strategică pentru companii în creștere</div>
+    <h1 class="hero-title">Creștere disciplinată.<br><em>Execuție clară.</em><br>Rezultate măsurabile.</h1>
+    <p class="hero-desc">Nexus Corp lucrează cu echipe de management care au nevoie de direcție, structură și implementare reală, nu doar prezentări frumoase. Intervenim în strategie, marketing, digitalizare și guvernanță operațională.</p>
+    <div class="hero-actions">
+      <button class="btn-fill" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Programează o discuție</button>
+      <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Vezi serviciile</button>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric"><strong>200+</strong><span>clienți activi în portofoliu</span></div>
+      <div class="metric"><strong>15 ani</strong><span>experiență în consultanță</span></div>
+      <div class="metric"><strong>98%</strong><span>retenție pe proiecte recurente</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo">
+      <div class="hero-index">02</div>
+      <div class="hero-badge">
+        <label>Focus curent</label>
+        <strong>Scale-up, restructurare și intrare pe piețe noi</strong>
+      </div>
+    </div>
+    <div class="hero-panels">
+      <div class="panel">
+        <label>Impact mediu în 12 luni</label>
+        <strong>+34%</strong>
+        <p>Creștere agregată a eficienței comerciale în proiectele cu implementare completă.</p>
+      </div>
+      <div class="panel">
+        <label>Ritm de răspuns</label>
+        <strong>24h</strong>
+        <p>Fereastră maximă de răspuns pentru echipele executive și proiectele în derulare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="reveal-section">
+  <div class="section-tag">Servicii</div>
+  <h2 class="section-title">Consultanță completă pentru<br><em>momente decisive</em></h2>
+  <p class="section-sub">Combinăm analiza strategică cu execuție operațională și suport de implementare, astfel încât schimbarea să se întâmple în business, nu doar în documente.</p>
+  <div class="services-grid">
+    <article class="service-card">
+      <div class="service-index">01</div>
+      <div class="service-name">Strategie de business</div>
+      <p class="service-desc">Clarificăm poziționarea, arhitectura de ofertă, prioritățile de investiții și direcția pe 12-36 luni.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">02</div>
+      <div class="service-name">Marketing &amp; growth</div>
+      <p class="service-desc">Definim mecanismele de achiziție, retenție și creștere, cu focus pe rentabilitate și calitatea pipeline-ului.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">03</div>
+      <div class="service-name">Transformare digitală</div>
+      <p class="service-desc">Mapăm procesele critice și introducem instrumente, automatizări și fluxuri scalabile.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">04</div>
+      <div class="service-name">M&amp;A și due diligence</div>
+      <p class="service-desc">Susținem achiziții, vânzări și consolidări prin analiză financiară, operațională și de integrare.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">05</div>
+      <div class="service-name">Leadership &amp; people</div>
+      <p class="service-desc">Ajustăm structura de management, responsabilitățile și sistemele de performanță ale echipelor-cheie.</p>
+    </article>
+    <article class="service-card">
+      <div class="service-index">06</div>
+      <div class="service-name">Expansiune internațională</div>
+      <p class="service-desc">Construim intrarea pe piețe noi cu pragmatism: validare, parteneriate, operațiuni și risc controlat.</p>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="reveal-section">
+  <div class="about-copy">
+    <div class="section-tag">Despre Nexus</div>
+    <h2 class="section-title">O firmă construită pentru<br><em>decizii dificile</em></h2>
+    <p class="section-sub" style="margin-bottom:1.2rem;">Nexus Corp a crescut dintr-o practică boutique într-un partener de transformare pentru companii care au nevoie de claritate în perioade cu miză mare: restructurări, accelerare, schimbare de model comercial sau expansiune.</p>
+    <p style="font-size:.95rem;color:var(--muted-soft);line-height:1.85;">Lucrăm aproape de management, cu implicare reală în prioritizare și implementare. Echipa reunește experiență din strategie, finanțe, operațiuni și digital, astfel încât recomandările să aibă suport practic și ritm de execuție.</p>
+    <ul>
+      <li>Acces direct la parteneri seniori și la un cadru clar de decizie încă din prima etapă.</li>
+      <li>Rapoarte scurte, utile și frecvente, orientate spre acțiune și blocaje reale.</li>
+      <li>Metodologie flexibilă pentru companii mature, scale-up-uri și grupuri regionale.</li>
+    </ul>
+  </div>
+  <div class="about-visual">
+    <div class="about-photo-main"></div>
+    <div class="about-aside">
+      <div class="about-photo-secondary"></div>
+      <div class="about-note">
+        <label>Modul nostru de lucru</label>
+        <p>Intrăm rapid în context, reducem zgomotul și facem diferența între ce este urgent și ce este cu adevărat important pentru business.</p>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat"><strong>40+</strong><span>experți și consultanți</span></div>
+        <div class="about-stat"><strong>12</strong><span>industrii active în portofoliu</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="reveal-section">
+  <div class="section-tag">Proces</div>
+  <h2 class="section-title">Un cadru de lucru care mută<br><em>strategia în execuție</em></h2>
+  <div class="process-grid">
+    <article class="process-card">
+      <span class="process-number">01</span>
+      <div class="process-title">Diagnostic</div>
+      <p class="process-desc">Analizăm datele, procesele, piața și punctele de presiune ale organizației.</p>
+    </article>
+    <article class="process-card">
+      <span class="process-number">02</span>
+      <div class="process-title">Decizie</div>
+      <p class="process-desc">Stabilim prioritățile care merită capital, timp și atenția managementului.</p>
+    </article>
+    <article class="process-card">
+      <span class="process-number">03</span>
+      <div class="process-title">Implementare</div>
+      <p class="process-desc">Intrăm alături de echipă în execuție, cu ownership clar pe fluxuri și rezultate.</p>
+    </article>
+    <article class="process-card">
+      <span class="process-number">04</span>
+      <div class="process-title">Optimizare</div>
+      <p class="process-desc">Monitorizăm impactul, recalibrăm și transformăm învățările în sistem de operare.</p>
+    </article>
+  </div>
+</section>
+
+<section id="cta" class="reveal-section">
+  <h2 class="cta-title">Ai nevoie de un partener care<br><em>înțelege presiunea deciziei</em>?</h2>
+  <p class="cta-sub">Prima conversație este concentrată pe contextul tău, nu pe un pitch standard. În 60 de minute putem clarifica unde merită intervenit și ce este doar zgomot operațional.</p>
+  <div class="cta-actions">
+    <button class="btn-fill">Programează consultația</button>
+    <a class="btn-outline" href="tel:+40740334757">0740 334 757</a>
+  </div>
+</section>
+
+<section class="collection-nav reveal-section">
+  <a class="collection-card" href="1-restaurant-la-dolce-vita.html">
+    <span>Proiect anterior · 01</span>
+    <strong>La Dolce Vita</strong>
+    <p>Revezi direcția editorială pentru hospitality și experiență premium.</p>
+  </a>
+  <a class="collection-card" href="3-velvet-store.html">
+    <span>Următorul proiect · 03</span>
+    <strong>Velvet Store</strong>
+    <p>Continuă cu interpretarea fashion: imagini, catalog și atmosferă de brand.</p>
+  </a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand">NEXUS<span>CORP</span></div>
+      <p>Consultanță strategică, creștere comercială și transformare operațională pentru companii care vor să construiască pe termen lung.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Servicii</h4>
+      <ul>
+        <li><a href="#services">Strategie</a></li>
+        <li><a href="#services">Growth</a></li>
+        <li><a href="#services">Digital</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Companie</h4>
+      <ul>
+        <li><a href="#about">Despre</a></li>
+        <li><a href="#process">Proces</a></li>
+        <li><a href="#cta">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Birouri</h4>
+      <ul>
+        <li><a href="#">București</a></li>
+        <li><a href="#">Cluj-Napoca</a></li>
+        <li><a href="#">Timișoara</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <span>© 2025 Nexus Corp SRL · Toate drepturile rezervate</span>
+    <span>Politică de confidențialitate · Termeni</span>
+  </div>
+ </footer>
+<script>
+document.body.classList.add('enhanced');
+const nexusNav=document.querySelector('nav');
+const nexusNavToggle=document.querySelector('[data-nav-toggle]');
+if(nexusNav&&nexusNavToggle){
+  const setNexusMenuState=open=>{
+    nexusNav.classList.toggle('menu-open',open);
+    document.body.classList.toggle('menu-open',open);
+    nexusNavToggle.setAttribute('aria-expanded',String(open));
+    nexusNavToggle.setAttribute('aria-label',open?'Închide meniul':'Deschide meniul');
+  };
+  const closeNexusMenu=()=>setNexusMenuState(false);
+  nexusNavToggle.addEventListener('click',()=>setNexusMenuState(!nexusNav.classList.contains('menu-open')));
+  nexusNav.querySelectorAll('.mobile-menu a,.mobile-menu button').forEach(el=>{
+    el.addEventListener('click',closeNexusMenu);
+  });
+  window.addEventListener('resize',()=>{if(window.innerWidth>900)closeNexusMenu();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeNexusMenu();});
+}
+const nexusObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');}
+  });
+},{threshold:.14});
+document.querySelectorAll('.reveal-section').forEach(section=>nexusObserver.observe(section));
+</script>
+</body>
+</html>
