@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="WebCraft livrează site-uri premium la cheie: prezentare, e-commerce, landing pages și dashboard-uri, cu design distinct, structură clară și lansare completă."/>
+<meta name="description" content="WebCraft creează site-uri de prezentare, landing pages și magazine online simple, cu structură clară, design atent și lansare asistată."/>
 <meta name="theme-color" content="#020409"/>
-<meta property="og:title" content="WebCraft — Site-uri La Cheie"/>
-<meta property="og:description" content="Portofoliu premium cu patru direcții vizuale distincte: restaurant, corporate, fashion și law firm."/>
+<meta property="og:title" content="WebCraft — Site-uri Clare"/>
+<meta property="og:description" content="Portofoliu WebCraft cu proiecte pentru restaurant, corporate, fashion și law firm, plus servicii web clare pentru businessuri la început."/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<title>WebCraft — Site-uri La Cheie</title>
+<title>WebCraft — Site-uri Clare</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Orbitron:wght@400;700;900&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap" rel="stylesheet"/>
@@ -18,9 +18,9 @@
   "@context":"https://schema.org",
   "@type":"ProfessionalService",
   "name":"WebCraft",
-  "description":"Studio de web design și dezvoltare care creează site-uri premium la cheie, de la concept la lansare.",
+  "description":"Freelancer web care creează site-uri clare și ușor de administrat, de la idee la lansare asistată.",
   "areaServed":"Romania",
-  "serviceType":["Web design","Web development","E-commerce development","Landing page design"]
+  "serviceType":["Web design","Website development","Landing page design","Website launch support"]
 }
 </script>
 <style>
@@ -75,6 +75,140 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   position:fixed;top:0;left:0;width:100%;height:100%;
   opacity:0.03;z-index:1;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ── WEBCRAFT ASSISTANT ── */
+#wc-robot{
+  position:fixed;
+  right:28px;
+  bottom:28px;
+  z-index:110;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:10px;
+  pointer-events:none;
+}
+#wc-bubble{
+  position:relative;
+  max-width:240px;
+  padding:12px 16px;
+  border-radius:18px 18px 6px 18px;
+  background:rgba(8,13,26,0.94);
+  border:1px solid rgba(191,95,255,0.22);
+  box-shadow:0 18px 45px rgba(0,0,0,0.35);
+  color:var(--text-main);
+  font-family:var(--font-body);
+  font-size:.84rem;
+  line-height:1.55;
+  opacity:0;
+  transform:translateY(8px) scale(.96);
+  transition:opacity .3s ease,transform .3s ease;
+  pointer-events:none;
+}
+#wc-bubble.visible{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+#wc-bubble::after{
+  content:"";
+  position:absolute;
+  right:18px;
+  bottom:-1px;
+  width:12px;
+  height:12px;
+  background:rgba(8,13,26,0.94);
+  border-right:1px solid rgba(191,95,255,0.22);
+  border-bottom:1px solid rgba(191,95,255,0.22);
+  transform:rotate(45deg) translateY(-4px);
+}
+#wc-bubble .accent{
+  color:var(--neon-purple);
+  font-weight:700;
+}
+#wc-face{
+  width:56px;
+  height:56px;
+  padding:0;
+  border:1.5px solid rgba(191,95,255,0.22);
+  border-radius:16px;
+  background:rgba(8,13,26,0.95);
+  appearance:none;
+  -webkit-appearance:none;
+  font:inherit;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  pointer-events:auto;
+  box-shadow:0 12px 30px rgba(0,0,0,0.35),0 0 0 0 rgba(191,95,255,0);
+  transition:transform .2s ease,box-shadow .3s ease,border-color .3s ease;
+  position:relative;
+  overflow:hidden;
+  color:inherit;
+}
+#wc-face:hover{
+  transform:scale(1.08);
+  border-color:rgba(0,245,255,0.32);
+  box-shadow:0 16px 40px rgba(0,0,0,0.42),0 0 0 6px rgba(191,95,255,0.12);
+}
+#wc-face svg{
+  transition:transform .35s ease;
+}
+#wc-face:hover svg{
+  transform:scale(1.08);
+}
+@keyframes pulse-glow{
+  0%,100%{box-shadow:0 12px 30px rgba(0,0,0,0.35),0 0 0 0 rgba(191,95,255,0.26);}
+  50%{box-shadow:0 12px 30px rgba(0,0,0,0.35),0 0 0 9px rgba(191,95,255,0);}
+}
+#wc-face.active{
+  animation:pulse-glow 2s ease-in-out infinite;
+}
+@keyframes blink{
+  0%,92%,100%{transform:scaleY(1);}
+  96%{transform:scaleY(.1);}
+}
+.robot-eye{
+  animation:blink 4s ease-in-out infinite;
+  transform-origin:center;
+}
+.robot-eye:nth-of-type(2){
+  animation-delay:.08s;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-4px);}
+}
+#wc-robot.idle #wc-face{
+  animation:float 3s ease-in-out infinite,pulse-glow 3s ease-in-out infinite;
+}
+@media(max-width:700px){
+  #wc-robot{
+    right:16px;
+    bottom:16px;
+  }
+  #wc-bubble{
+    max-width:min(220px,calc(100vw - 32px));
+    font-size:.8rem;
+  }
+  #wc-face{
+    width:52px;
+    height:52px;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  #wc-bubble,
+  #wc-face,
+  #wc-face svg,
+  .robot-eye{
+    transition:none;
+    animation:none;
+  }
+  #wc-robot.idle #wc-face,
+  #wc-face.active{
+    animation:none;
+  }
 }
 
 /* ── WRAPPER ── */
@@ -244,6 +378,30 @@ nav{
   width:1px;height:40px;
   background:linear-gradient(to bottom,var(--neon-cyan),transparent);
 }
+
+/* ── QUICK CONTACT ── */
+#quick-contact{
+  padding:0 2rem 4rem;
+}
+.quick-contact-shell{
+  max-width:720px;
+  margin:0 auto;
+}
+.quick-contact-shell .quote-widget{
+  margin-top:0;
+}
+.quote-prefill-note{
+  display:none;
+  margin-top:1rem;
+  padding:.85rem 1rem;
+  border-radius:14px;
+  border:1px solid rgba(0,245,255,0.12);
+  background:rgba(0,245,255,0.04);
+  color:var(--text-muted);
+  font-size:.82rem;
+  line-height:1.6;
+}
+.quote-prefill-note.active{display:block;}
 
 /* ── STATS BAR ── */
 .stats-bar{
@@ -566,10 +724,7 @@ section{padding:6rem 2rem;}
   background:radial-gradient(circle,rgba(191,95,255,0.06) 0%,transparent 70%);
   pointer-events:none;
 }
-.contact-layout{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:5rem;align-items:center;
-}
+.contact-layout{max-width:720px;}
 .contact-form{margin-top:2rem;}
 .form-status{
   margin-top:.85rem;font-size:.78rem;line-height:1.6;color:var(--text-muted);
@@ -609,6 +764,367 @@ section{padding:6rem 2rem;}
 .contact-detail-label{font-size:.72rem;color:var(--text-muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem;font-family:var(--font-mono);}
 .contact-detail-val{font-size:.9rem;color:var(--text-main);}
 .contact-link{color:inherit;text-decoration:none;}
+.quote-widget{
+  margin-top:2rem;
+  background:rgba(8,13,26,0.94);
+  border:1px solid rgba(191,95,255,0.18);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.03);
+}
+.quote-widget-header{
+  padding:2rem 2rem 1.6rem;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  background:linear-gradient(135deg,rgba(191,95,255,0.16) 0%,rgba(0,245,255,0.08) 48%,transparent 100%);
+}
+.quote-widget-label{
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--neon-cyan);
+  font-family:var(--font-mono);
+  margin-bottom:.55rem;
+}
+.quote-widget-title{
+  font-size:1.4rem;
+  font-weight:600;
+  line-height:1.25;
+  margin-bottom:.45rem;
+}
+.quote-widget-text{
+  font-size:.82rem;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.quote-progress-bar{
+  height:2px;
+  background:rgba(255,255,255,0.06);
+}
+.quote-progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--neon-cyan),var(--neon-purple));
+  transition:width .35s ease;
+}
+.quote-steps,.quote-result{padding:2rem;}
+.quote-step{display:none;}
+.quote-step.active{display:block;}
+.quote-question{
+  font-size:1.05rem;
+  font-weight:600;
+  line-height:1.45;
+  margin-bottom:.35rem;
+}
+.quote-sub{
+  font-size:.82rem;
+  color:var(--text-muted);
+  margin-bottom:1.25rem;
+}
+.quote-options{
+  display:grid;
+  gap:.75rem;
+}
+.quote-options.quote-cols-2{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.quote-option{
+  width:100%;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:16px;
+  padding:.95rem 1rem;
+  color:var(--text-main);
+  cursor:pointer;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  text-align:left;
+  font:inherit;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.quote-option:hover{
+  border-color:rgba(191,95,255,0.35);
+  background:rgba(191,95,255,0.08);
+  transform:translateY(-1px);
+}
+.quote-option.selected{
+  border-color:rgba(0,245,255,0.38);
+  background:rgba(0,245,255,0.08);
+  box-shadow:0 12px 24px rgba(0,245,255,0.08);
+}
+.quote-option-icon{
+  width:40px;
+  height:40px;
+  background:rgba(255,255,255,0.04);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.15rem;
+  flex-shrink:0;
+}
+.quote-option.selected .quote-option-icon{
+  background:rgba(191,95,255,0.18);
+}
+.quote-option-name{
+  display:block;
+  font-size:.92rem;
+  font-weight:500;
+  margin-bottom:.18rem;
+}
+.quote-option-desc{
+  display:block;
+  font-size:.78rem;
+  color:var(--text-muted);
+}
+.quote-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-top:1.5rem;
+}
+.quote-btn-back{
+  background:none;
+  border:none;
+  color:var(--text-muted);
+  font:inherit;
+  font-size:.82rem;
+  cursor:pointer;
+  padding:.4rem 0;
+  transition:color .18s ease;
+}
+.quote-btn-back:hover{color:var(--text-main);}
+.quote-btn-back.hidden{visibility:hidden;}
+.quote-btn-next{
+  background:linear-gradient(135deg,var(--neon-cyan),var(--neon-purple));
+  color:var(--dark-bg);
+  border:none;
+  border-radius:999px;
+  padding:.82rem 1.35rem;
+  font:inherit;
+  font-size:.85rem;
+  font-weight:700;
+  cursor:pointer;
+  opacity:.45;
+  pointer-events:none;
+  transition:opacity .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.quote-btn-next.ready{
+  opacity:1;
+  pointer-events:auto;
+}
+.quote-btn-next.ready:hover{
+  transform:translateY(-1px);
+  box-shadow:0 12px 28px rgba(0,245,255,0.18);
+}
+.quote-step-counter{
+  font-size:.72rem;
+  color:var(--text-muted);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-family:var(--font-mono);
+}
+.quote-result{display:none;}
+.quote-result.active{display:block;}
+.quote-result-header{
+  text-align:center;
+  margin-bottom:1.6rem;
+}
+.quote-result-check{
+  width:52px;
+  height:52px;
+  margin:0 auto 1rem;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(57,255,122,0.08);
+  border:1px solid rgba(57,255,122,0.2);
+  color:var(--neon-green);
+  font-size:1.3rem;
+}
+.quote-result-title{
+  font-size:1.25rem;
+  font-weight:600;
+  margin-bottom:.35rem;
+}
+.quote-result-sub{
+  font-size:.82rem;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.quote-price-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:18px;
+  padding:1rem 1.2rem;
+  margin-bottom:1rem;
+}
+.quote-price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:.65rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.quote-price-row:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+.quote-price-label{
+  font-size:.82rem;
+  color:var(--text-muted);
+}
+.quote-price-value{
+  font-size:.84rem;
+  color:var(--text-main);
+  font-weight:500;
+  text-align:right;
+}
+.quote-total{
+  background:linear-gradient(135deg,rgba(0,245,255,0.08),rgba(191,95,255,0.12));
+  border:1px solid rgba(191,95,255,0.22);
+  border-radius:18px;
+  padding:1.15rem 1.25rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:1.25rem;
+}
+.quote-total-label{
+  font-size:.78rem;
+  color:var(--text-muted);
+  margin-bottom:.25rem;
+}
+.quote-total-amount{
+  font-family:var(--font-display);
+  font-size:2rem;
+  color:var(--text-main);
+  line-height:1;
+}
+.quote-total-meta{text-align:right;}
+.quote-total-delivery-label{
+  font-size:.72rem;
+  color:var(--text-muted);
+  margin-bottom:.25rem;
+}
+.quote-total-delivery-days{
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--neon-green);
+}
+.quote-calculator-form{
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+}
+.quote-field-group{
+  display:flex;
+  flex-direction:column;
+  gap:.38rem;
+}
+.quote-field-label{
+  font-size:.72rem;
+  color:var(--text-muted);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-family:var(--font-mono);
+}
+.quote-calculator-form input,.quote-calculator-form textarea,.quote-calculator-form select{
+  width:100%;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(0,245,255,0.15);
+  color:var(--text-main);
+  padding:.85rem 1rem;
+  border-radius:14px;
+  font-family:var(--font-body);
+  font-size:.9rem;
+  outline:none;
+  transition:border-color .18s ease,box-shadow .18s ease;
+  resize:none;
+}
+.quote-calculator-form select{
+  appearance:none;
+  -webkit-appearance:none;
+}
+.quote-calculator-form input::placeholder,.quote-calculator-form textarea::placeholder{
+  color:var(--text-muted);
+}
+.quote-calculator-form input:focus,.quote-calculator-form textarea:focus,.quote-calculator-form select:focus{
+  border-color:var(--neon-cyan);
+  box-shadow:0 0 0 3px rgba(0,245,255,0.08);
+}
+.quote-calculator-form select option{
+  background:var(--dark-card);
+  color:var(--text-main);
+}
+.quote-btn-submit{
+  background:linear-gradient(135deg,var(--neon-cyan),var(--neon-purple));
+  color:var(--dark-bg);
+  border:none;
+  border-radius:14px;
+  padding:.95rem 1rem;
+  font:inherit;
+  font-size:.92rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+  margin-top:.25rem;
+}
+.quote-btn-submit:hover{
+  transform:translateY(-1px);
+  box-shadow:0 12px 28px rgba(0,245,255,0.18);
+}
+.quote-btn-submit:disabled{
+  opacity:.7;
+  cursor:wait;
+  filter:saturate(.85);
+}
+.quote-success-msg,.quote-error-msg{
+  display:none;
+  margin-top:1rem;
+  padding:1rem 1.1rem;
+  border-radius:14px;
+  font-size:.85rem;
+  line-height:1.6;
+  text-align:center;
+}
+.quote-success-msg.active,.quote-error-msg.active{display:block;}
+.quote-success-msg{
+  background:rgba(57,255,122,0.08);
+  border:1px solid rgba(57,255,122,0.2);
+  color:var(--neon-green);
+}
+.quote-error-msg{
+  background:rgba(255,77,120,0.08);
+  border:1px solid rgba(255,77,120,0.2);
+  color:#ffb0c6;
+}
+.quote-result-actions{
+  display:flex;
+  justify-content:center;
+  margin-top:1rem;
+}
+.quote-btn-reset{
+  background:none;
+  border:1px solid rgba(0,245,255,0.18);
+  color:var(--text-muted);
+  border-radius:999px;
+  padding:.75rem 1rem;
+  font:inherit;
+  font-size:.82rem;
+  cursor:pointer;
+  transition:border-color .18s ease,color .18s ease,background .18s ease;
+}
+.quote-btn-reset:hover{
+  color:var(--text-main);
+  border-color:rgba(0,245,255,0.35);
+  background:rgba(0,245,255,0.04);
+}
 
 /* ── FOOTER ── */
 footer{
@@ -684,6 +1200,7 @@ footer{
   .mobile-menu .nav-cta{margin-top:.75rem;}
   section{padding:5rem 1.25rem;}
   #hero{padding:7rem 1.25rem 4rem;}
+  #quick-contact{padding:0 1.25rem 4rem;}
   .stats-bar{padding:2rem 1.25rem;}
   .stats-inner{grid-template-columns:repeat(2,1fr);}
   .stat-item:nth-child(2n){border-right:none;}
@@ -705,11 +1222,18 @@ footer{
   .process-steps{gap:1.25rem;}
   .pricing-note{text-align:left;}
   .hero-scroll{display:none;}
+  .quote-widget-header,.quote-steps,.quote-result{padding:1.5rem;}
+  .quote-options.quote-cols-2{grid-template-columns:1fr;}
+  .quote-total{flex-direction:column;align-items:flex-start;}
+  .quote-total-meta{text-align:left;}
+  .quote-nav{flex-wrap:wrap;}
+  .quote-step-counter{width:100%;order:3;}
 }
 @media(max-width:480px){
   nav{padding:.95rem 1rem;}
   section{padding-left:1rem;padding-right:1rem;}
   #hero{padding:7rem 1rem 3.5rem;}
+  #quick-contact{padding:0 1rem 3rem;}
   footer{padding:1.5rem 1rem 2rem;}
   .nav-cta{padding:.5rem .8rem;font-size:.72rem;}
   .hero-btns{flex-direction:column;width:100%;max-width:320px;margin:0 auto;}
@@ -752,7 +1276,7 @@ footer{
     <li><a href="#tech">Tehnologii</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+  <button class="nav-cta" onclick="scrollToLeadForm()">
     Pornești un proiect
   </button>
   <div class="mobile-menu" id="mobile-menu">
@@ -761,7 +1285,7 @@ footer{
     <a href="#pricing">Prețuri</a>
     <a href="#tech">Tehnologii</a>
     <a href="#contact">Contact</a>
-    <button class="nav-cta" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    <button class="nav-cta" type="button" onclick="scrollToLeadForm()">
       Pornești un proiect
     </button>
   </div>
@@ -775,10 +1299,10 @@ footer{
     <span class="line2">site-ul visat</span>
   </h1>
   <p class="hero-sub">
-    De la un simplu site de prezentare până la platforme complexe — livrezi complet, cu <span>domeniu și hosting incluse în primul an</span>, plus soluție gata de folosit.
+    De la un site de prezentare până la un magazin online simplu — primești o soluție clară, bine făcută, cu <span>lansare asistată și comunicare directă</span>.
   </p>
   <div class="hero-btns">
-    <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+    <button class="btn-primary" onclick="scrollToLeadForm()">
       Vreau un site
     </button>
     <button class="btn-secondary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
@@ -786,9 +1310,9 @@ footer{
     </button>
   </div>
   <div class="hero-badges">
-    <span class="hero-badge-pill">4 nișe distincte</span>
-    <span class="hero-badge-pill">Design orientat pe identitate</span>
-    <span class="hero-badge-pill">Colecție premium de showcase</span>
+    <span class="hero-badge-pill">Site-uri de prezentare</span>
+    <span class="hero-badge-pill">Landing pages clare</span>
+    <span class="hero-badge-pill">Magazine online simple</span>
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
@@ -796,24 +1320,233 @@ footer{
   </div>
 </section>
 
+<!-- QUICK CONTACT -->
+<section id="quick-contact">
+  <div class="section-inner">
+    <div class="quick-contact-shell">
+      <div class="quote-widget reveal" id="quote-widget">
+        <div class="quote-widget-header">
+          <div class="quote-widget-label">Estimator WebCraft</div>
+          <div class="quote-widget-title">Calculează prețul site-ului tău</div>
+          <p class="quote-widget-text">3 întrebări simple · Estimare instant · Fără obligații</p>
+        </div>
+        <div class="quote-progress-bar">
+          <div class="quote-progress-fill" id="quote-progress" style="width:0%"></div>
+        </div>
+        <div class="quote-steps">
+          <div class="quote-step active" id="quote-step-1">
+            <div class="quote-question">De ce tip de site ai nevoie?</div>
+            <div class="quote-sub">Alege varianta care se potrivește cel mai bine afacerii tale.</div>
+            <div class="quote-options">
+              <button class="quote-option" data-step="1" data-value="prezentare" data-price="400" data-days="5" type="button">
+                <span class="quote-option-icon" aria-hidden="true">🏢</span>
+                <span>
+                  <span class="quote-option-name">Site de prezentare</span>
+                  <span class="quote-option-desc">Firmă, cabinet, freelancer</span>
+                </span>
+              </button>
+              <button class="quote-option" data-step="1" data-value="landing" data-price="300" data-days="3" type="button">
+                <span class="quote-option-icon" aria-hidden="true">🎯</span>
+                <span>
+                  <span class="quote-option-name">Landing page</span>
+                  <span class="quote-option-desc">Campanie, produs, lansare</span>
+                </span>
+              </button>
+              <button class="quote-option" data-step="1" data-value="ecommerce" data-price="1500" data-days="12" type="button">
+                <span class="quote-option-icon" aria-hidden="true">🛒</span>
+                <span>
+                  <span class="quote-option-name">Magazin online simplu</span>
+                  <span class="quote-option-desc">Catalog, produse, comandă ușoară</span>
+                </span>
+              </button>
+              <button class="quote-option" data-step="1" data-value="continut" data-price="650" data-days="7" type="button">
+                <span class="quote-option-icon" aria-hidden="true">📝</span>
+                <span>
+                  <span class="quote-option-name">Site cu blog / articole</span>
+                  <span class="quote-option-desc">Conținut, servicii, noutăți</span>
+                </span>
+              </button>
+            </div>
+            <div class="quote-nav">
+              <button class="quote-btn-back hidden" type="button">← Înapoi</button>
+              <span class="quote-step-counter">1 / 3</span>
+              <button class="quote-btn-next" id="quote-next-1" type="button">Continuă →</button>
+            </div>
+          </div>
+          <div class="quote-step" id="quote-step-2">
+            <div class="quote-question">Ce extra-funcționalități vrei?</div>
+            <div class="quote-sub">Poți alege mai multe opțiuni.</div>
+            <div class="quote-options">
+              <button class="quote-option quote-option-multi" data-step="2" data-value="pages" data-price="100" type="button">
+                <span class="quote-option-icon" aria-hidden="true">📄</span>
+                <span>
+                  <span class="quote-option-name">Pagini suplimentare</span>
+                  <span class="quote-option-desc">+100 lei</span>
+                </span>
+              </button>
+              <button class="quote-option quote-option-multi" data-step="2" data-value="blog" data-price="150" type="button">
+                <span class="quote-option-icon" aria-hidden="true">✍️</span>
+                <span>
+                  <span class="quote-option-name">Blog / Articole</span>
+                  <span class="quote-option-desc">+150 lei</span>
+                </span>
+              </button>
+              <button class="quote-option quote-option-multi" data-step="2" data-value="seo_basic" data-price="100" type="button">
+                <span class="quote-option-icon" aria-hidden="true">📈</span>
+                <span>
+                  <span class="quote-option-name">SEO de bază extins</span>
+                  <span class="quote-option-desc">+100 lei</span>
+                </span>
+              </button>
+              <button class="quote-option quote-option-multi" data-step="2" data-value="analytics" data-price="0" type="button">
+                <span class="quote-option-icon" aria-hidden="true">📊</span>
+                <span>
+                  <span class="quote-option-name">Google Analytics</span>
+                  <span class="quote-option-desc">Inclus gratuit</span>
+                </span>
+              </button>
+              <button class="quote-option quote-option-multi" data-step="2" data-value="chat" data-price="100" type="button">
+                <span class="quote-option-icon" aria-hidden="true">💬</span>
+                <span>
+                  <span class="quote-option-name">Contact rapid pe WhatsApp</span>
+                  <span class="quote-option-desc">+100 lei</span>
+                </span>
+              </button>
+              <button class="quote-option quote-option-multi" data-step="2" data-value="nimic" data-price="0" type="button">
+                <span class="quote-option-icon" aria-hidden="true">✨</span>
+                <span>
+                  <span class="quote-option-name">Fără extra</span>
+                  <span class="quote-option-desc">De bază e suficient</span>
+                </span>
+              </button>
+            </div>
+            <div class="quote-nav">
+              <button class="quote-btn-back" id="quote-back-2" type="button">← Înapoi</button>
+              <span class="quote-step-counter">2 / 3</span>
+              <button class="quote-btn-next ready" id="quote-next-2" type="button">Continuă →</button>
+            </div>
+          </div>
+          <div class="quote-step" id="quote-step-3">
+            <div class="quote-question">Când ai vrea să fie gata?</div>
+            <div class="quote-sub">Prefer termene realiste, ca să pot livra bine fiecare proiect.</div>
+            <div class="quote-options quote-cols-2">
+              <button class="quote-option" data-step="3" data-value="prioritar" data-price="150" data-days="-1" type="button">
+                <span class="quote-option-icon" aria-hidden="true">🔥</span>
+                <span>
+                  <span class="quote-option-name">Prioritar</span>
+                  <span class="quote-option-desc">Minim 2 zile, dacă am loc</span>
+                </span>
+              </button>
+              <button class="quote-option" data-step="3" data-value="saptamana" data-price="0" data-days="0" type="button">
+                <span class="quote-option-icon" aria-hidden="true">📅</span>
+                <span>
+                  <span class="quote-option-name">Săptămâna aceasta</span>
+                  <span class="quote-option-desc">În 7 zile</span>
+                </span>
+              </button>
+              <button class="quote-option" data-step="3" data-value="luna" data-price="-50" data-days="3" type="button">
+                <span class="quote-option-icon" aria-hidden="true">🗓️</span>
+                <span>
+                  <span class="quote-option-name">Luna aceasta</span>
+                  <span class="quote-option-desc">Fără grabă</span>
+                </span>
+              </button>
+              <button class="quote-option" data-step="3" data-value="flexibil" data-price="-100" data-days="5" type="button">
+                <span class="quote-option-icon" aria-hidden="true">😌</span>
+                <span>
+                  <span class="quote-option-name">Flexibil</span>
+                  <span class="quote-option-desc">Când ești disponibil</span>
+                </span>
+              </button>
+            </div>
+            <div class="quote-nav">
+              <button class="quote-btn-back" id="quote-back-3" type="button">← Înapoi</button>
+              <span class="quote-step-counter">3 / 3</span>
+              <button class="quote-btn-next" id="quote-next-3" type="button">Vezi estimarea →</button>
+            </div>
+          </div>
+        </div>
+        <div class="quote-result" id="quote-result">
+          <div class="quote-result-header">
+            <div class="quote-result-check">✓</div>
+            <div class="quote-result-title">Estimare personalizată</div>
+            <div class="quote-result-sub">Bazată pe răspunsurile tale - oferta finală vine după o scurtă discuție.</div>
+          </div>
+          <div class="quote-price-card" id="quote-price-breakdown"></div>
+          <div class="quote-total">
+            <div>
+              <div class="quote-total-label">Estimare totală</div>
+              <div class="quote-total-amount" id="quote-total-price">—</div>
+            </div>
+            <div class="quote-total-meta">
+              <div class="quote-total-delivery-label">Livrare estimată</div>
+              <div class="quote-total-delivery-days" id="quote-total-days">—</div>
+            </div>
+          </div>
+          <form class="quote-calculator-form" id="quote-contact-form" action="https://formspree.io/f/xgopwrgg" method="POST">
+            <input type="hidden" name="_subject" value="WebCraft - cerere noua din calculator"/>
+            <input type="hidden" name="sursa" value="WebCraft Calculator"/>
+            <input type="hidden" name="estimare" id="quote-hidden-estimare"/>
+            <input type="hidden" name="tip_site" id="quote-hidden-tip-site"/>
+            <input type="hidden" name="functionalitati" id="quote-hidden-functionalitati"/>
+            <input type="hidden" name="urgenta" id="quote-hidden-urgenta"/>
+            <input type="text" name="nume" placeholder="Numele tău" required/>
+            <input type="email" name="email" placeholder="Email" required/>
+            <input type="tel" name="telefon" placeholder="Telefon / WhatsApp"/>
+            <div class="quote-field-group">
+              <label class="quote-field-label" for="quote-photos">Poze pentru site</label>
+              <select id="quote-photos" name="poze_pentru_site" required>
+                <option value="" selected disabled>Alege varianta potrivită</option>
+                <option value="Am pozele pregatite">Am pozele pregătite</option>
+                <option value="Am doar o parte din poze">Am doar o parte din poze</option>
+                <option value="Am nevoie de ajutor pentru alegerea sau cautarea pozelor">Am nevoie să mă ajuți cu pozele</option>
+              </select>
+            </div>
+            <div class="quote-field-group">
+              <label class="quote-field-label" for="quote-logo">Logo</label>
+              <select id="quote-logo" name="logo" required>
+                <option value="" selected disabled>Alege varianta potrivită</option>
+                <option value="Am deja logo">Am deja logo</option>
+                <option value="Am nevoie de un logo simplu">Am nevoie de un logo simplu</option>
+                <option value="Nu am logo inca si vreau sa discutam">Nu am logo încă, discutăm</option>
+              </select>
+            </div>
+            <textarea name="mesaj" rows="3" placeholder="Orice detaliu suplimentar (opțional)"></textarea>
+            <button type="submit" class="quote-btn-submit">Trimite cererea - revin în aceeași zi</button>
+          </form>
+          <div class="quote-success-msg" id="quote-success-msg">
+            Mesaj trimis! Revin către tine în aceeași zi.
+          </div>
+          <div class="quote-error-msg" id="quote-error-msg">
+            Nu am reușit să trimit acum. Încearcă din nou în câteva momente.
+          </div>
+          <div class="quote-result-actions">
+            <button class="quote-btn-reset" id="quote-reset" type="button">Reconfigurează estimarea</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-num" data-target="47">0</div>
-      <div class="stat-label">Proiecte livrate</div>
+      <div class="stat-num" data-target="12">0</div>
+      <div class="stat-label">Proiecte create</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num" data-target="100">0</div>
-      <div class="stat-label">Clienți mulțumiți %</div>
+      <div class="stat-num" data-target="3">0</div>
+      <div class="stat-label">Tipuri de proiecte</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num" data-target="5">0</div>
+      <div class="stat-num" data-target="6">0</div>
       <div class="stat-label">Zile livrare medie</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num" data-target="24">0</div>
-      <div class="stat-label">Suport ore / zi</div>
+      <div class="stat-num" data-target="12">0</div>
+      <div class="stat-label">Ore răspuns</div>
     </div>
   </div>
 </div>
@@ -824,44 +1557,44 @@ footer{
     <div class="reveal">
       <div class="section-tag">01 / servicii</div>
       <h2 class="section-title">Tot ce ai nevoie,<br><em>la un singur contact</em></h2>
-      <p class="section-sub">Nu te mai ocupi de nimic tehnic. Primești totul gata — de la cod până la domeniu activ, hosting configurat și lansare completă.</p>
+      <p class="section-sub">Lucrez pe proiecte pe care le pot duce bine la capăt. Prefer soluții clare, utile și ușor de administrat, fără complicații inutile.</p>
     </div>
     <div class="services-grid reveal">
       <div class="service-card">
         <div class="service-index">01</div>
         <div class="service-name">Site de prezentare</div>
         <p class="service-desc">Design modern, responsive, optimizat SEO. Perfect pentru firme, cabinete, ONG-uri sau antreprenori individuali.</p>
-        <span class="service-tag">livrare 3-5 zile</span>
+        <span class="service-tag">livrare 4-7 zile</span>
       </div>
       <div class="service-card">
         <div class="service-index">02</div>
-        <div class="service-name">Magazin online</div>
-        <p class="service-desc">E-commerce complet cu coș, plăți online, gestiune produse și comenzi. Gata să vinzi din prima zi.</p>
-        <span class="service-tag">livrare 7-14 zile</span>
+        <div class="service-name">Magazin online simplu</div>
+        <p class="service-desc">Potrivit pentru businessuri la început: produse, categorii, pagini esențiale și un flux de comandă simplu.</p>
+        <span class="service-tag">livrare 10-14 zile</span>
       </div>
       <div class="service-card">
         <div class="service-index">03</div>
         <div class="service-name">Landing page</div>
         <p class="service-desc">O pagină concentrată, gândită să convertească vizitatorii în clienți. Ideal pentru campanii și lansări de produs.</p>
-        <span class="service-tag">livrare 1-3 zile</span>
+        <span class="service-tag">livrare 2-4 zile</span>
       </div>
       <div class="service-card">
         <div class="service-index">04</div>
-        <div class="service-name">Portal / Dashboard</div>
-        <p class="service-desc">Aplicații web custom cu autentificare, panouri de control și funcționalități avansate. Orice complexitate.</p>
-        <span class="service-tag">livrare 14-30 zile</span>
+        <div class="service-name">Site cu blog / articole</div>
+        <p class="service-desc">Pentru servicii, educație sau proiecte care au nevoie de conținut actualizat și structură clară.</p>
+        <span class="service-tag">livrare 5-8 zile</span>
       </div>
       <div class="service-card">
         <div class="service-index">05</div>
-        <div class="service-name">Domeniu + Hosting</div>
-        <p class="service-desc">Mă ocup de achiziție, configurare, SSL și lansare. Tu nu atingi niciun panou tehnic, iar primul an este inclus.</p>
-        <span class="service-tag">inclus în primul an</span>
+        <div class="service-name">Domeniu + lansare</div>
+        <p class="service-desc">Te ajut cu alegerea domeniului, configurarea hostingului și publicarea site-ului într-un mod simplu.</p>
+        <span class="service-tag">asistență la lansare</span>
       </div>
       <div class="service-card">
         <div class="service-index">06</div>
-        <div class="service-name">Mentenanță &amp; Suport</div>
-        <p class="service-desc">Actualizări, modificări, backup-uri și suport tehnic continuu. Site-ul tău rămâne mereu în formă perfectă.</p>
-        <span class="service-tag">abonament lunar</span>
+        <div class="service-name">Mentenanță la cerere</div>
+        <p class="service-desc">Modificări, actualizări și mici ajustări după lansare, atunci când ai nevoie de ele.</p>
+        <span class="service-tag">la nevoie</span>
       </div>
     </div>
   </div>
@@ -872,8 +1605,8 @@ footer{
   <div class="section-inner">
     <div class="reveal">
       <div class="section-tag">02 / proces</div>
-      <h2 class="section-title">Simplu pentru tine,<br><em>complex pe interior</em></h2>
-      <p class="section-sub">Ai lucruri mai importante de făcut. Eu mă ocup de tot procesul tehnic.</p>
+      <h2 class="section-title">Proces clar,<br><em>fără complicații</em></h2>
+      <p class="section-sub">Lucrăm pe pași simpli, ca să știi mereu unde suntem și ce urmează.</p>
     </div>
     <div class="process-steps reveal">
       <div class="process-step">
@@ -884,17 +1617,17 @@ footer{
       <div class="process-step">
         <span class="step-num">02</span>
         <div class="step-title">Design</div>
-        <p class="step-desc">Creez mockup-ul vizual și îl ajustez până ești 100% mulțumit.</p>
+        <p class="step-desc">Propun direcția vizuală și fac ajustările esențiale înainte de dezvoltare.</p>
       </div>
       <div class="process-step">
         <span class="step-num">03</span>
         <div class="step-title">Dezvoltare</div>
-        <p class="step-desc">Construiesc site-ul profesional, rapid și optimizat pentru toate dispozitivele.</p>
+        <p class="step-desc">Construiesc site-ul curat, responsive și ușor de folosit pe toate dispozitivele.</p>
       </div>
       <div class="process-step">
         <span class="step-num">04</span>
         <div class="step-title">Lansare</div>
-        <p class="step-desc">Configurez domeniu, hosting, SSL și livrez totul gata de folosit.</p>
+        <p class="step-desc">Te ajut cu publicarea și verificările de bază, ca să pornim în siguranță.</p>
       </div>
     </div>
   </div>
@@ -922,7 +1655,7 @@ footer{
             <div class="port-tech">
               <span>Restaurant</span>
               <span>Rezervări</span>
-              <span>Atmosferă premium</span>
+              <span>Atmosferă elegantă</span>
             </div>
             <div class="port-open">Deschide proiectul</div>
           </div>
@@ -952,15 +1685,15 @@ footer{
         <div class="port-overlay">
           <div class="port-topline">
             <div class="port-num">03</div>
-            <div class="port-kicker">Premium fashion store</div>
+            <div class="port-kicker">Fashion store concept</div>
           </div>
           <div class="port-frame">
             <div class="port-title">Velvet Store</div>
             <p class="port-summary">Magazin online de modă cu imagini puternice, produse puse în valoare și o interfață care respiră eleganță contemporană.</p>
             <div class="port-tech">
-              <span>E-commerce</span>
+              <span>Magazin online</span>
               <span>Fashion</span>
-              <span>Catalog premium</span>
+              <span>Catalog clar</span>
             </div>
             <div class="port-open">Deschide proiectul</div>
           </div>
@@ -994,58 +1727,54 @@ footer{
   <div class="section-inner">
     <div class="reveal">
       <div class="section-tag">04 / prețuri</div>
-      <h2 class="section-title">Investiție clară,<br><em>rezultate garantate</em></h2>
-      <p class="section-sub">Prețuri transparente, fără costuri ascunse. Domeniul, SSL-ul și lansarea sunt incluse, iar hostingul este stabilit clar în funcție de tipul proiectului.</p>
+      <h2 class="section-title">Investiție clară,<br><em>pentru un început bun</em></h2>
+      <p class="section-sub">Prețuri transparente, potrivite pentru proiecte pe care le pot livra bine și fără complicații inutile.</p>
     </div>
     <div class="pricing-grid reveal">
       <div class="pricing-card">
         <div class="pricing-tier">// Starter</div>
-        <div class="pricing-price">de la 500<span> lei</span></div>
-        <p class="pricing-desc">Site de prezentare complet, gata să impresioneze.</p>
+        <div class="pricing-price">de la 400<span> lei</span></div>
+        <p class="pricing-desc">Pachet simplu și clar pentru o prezență online serioasă.</p>
         <ul class="pricing-features">
-          <li>Până la 5 pagini</li>
+          <li>Până la 4 pagini</li>
           <li>Design responsive</li>
-          <li>Formular de contact</li>
+          <li>Formular de contact sau WhatsApp</li>
           <li>SEO de bază</li>
-          <li>Domeniu .ro inclus (1 an)</li>
-          <li>Hosting inclus (1 an)</li>
-          <li>SSL gratuit</li>
+          <li>Asistență la lansare</li>
+          <li>1 rundă de modificări</li>
         </ul>
         <button class="btn-plan" onclick="selectPackage('Starter')">Alege Starter</button>
       </div>
       <div class="pricing-card featured">
         <div class="pricing-tier">// Business</div>
-        <div class="pricing-price">de la 1200<span> lei</span></div>
-        <p class="pricing-desc">Site profesional cu funcționalități avansate.</p>
+        <div class="pricing-price">de la 850<span> lei</span></div>
+        <p class="pricing-desc">Pentru site-uri mai complete, cu structură mai mare și conținut extins.</p>
         <ul class="pricing-features">
-          <li>Pagini nelimitate</li>
-          <li>Blog / News integrat</li>
-          <li>Multilingv (RO + EN)</li>
-          <li>SEO avansat + sitemap</li>
+          <li>Până la 8 pagini</li>
+          <li>Blog / articole</li>
           <li>Integrare Google Analytics</li>
-          <li>Domeniu inclus (1 an)</li>
-          <li>Hosting standard inclus (1 an)</li>
-          <li>1 lună suport gratuit</li>
+          <li>SEO de bază extins</li>
+          <li>2 runde de modificări</li>
+          <li>7 zile suport după lansare</li>
         </ul>
         <button class="btn-plan" onclick="selectPackage('Business')">Alege Business</button>
       </div>
       <div class="pricing-card">
-        <div class="pricing-tier">// E-Commerce</div>
-        <div class="pricing-price">de la 2500<span> lei</span></div>
-        <p class="pricing-desc">Magazin online complet, gata să genereze vânzări.</p>
+        <div class="pricing-tier">// Magazin Start</div>
+        <div class="pricing-price">de la 1500<span> lei</span></div>
+        <p class="pricing-desc">Magazin online simplu, potrivit pentru un început sănătos.</p>
         <ul class="pricing-features">
-          <li>Produse nelimitate</li>
-          <li>Plăți online (card, PayPal)</li>
-          <li>Gestiune comenzi și stoc</li>
-          <li>Facturare automată</li>
-          <li>Notificări email/SMS</li>
-          <li>Configurare infrastructură și lansare</li>
-          <li>3 luni suport gratuit</li>
+          <li>Până la 20 produse</li>
+          <li>Categorii și pagini esențiale</li>
+          <li>Comandă simplă pe formular sau WhatsApp</li>
+          <li>Configurare conținut de bază</li>
+          <li>Asistență la lansare</li>
+          <li>7 zile suport după lansare</li>
         </ul>
-        <button class="btn-plan" onclick="selectPackage('E-Commerce')">Alege E-Commerce</button>
+        <button class="btn-plan" onclick="selectPackage('Magazin Start')">Alege Magazin Start</button>
       </div>
     </div>
-    <p class="pricing-note reveal">După primul an, reînnoirea domeniului și a hostingului se face separat. Pentru magazine online și proiecte cu infrastructură avansată, soluția de hosting se stabilește în funcție de complexitate.</p>
+    <p class="pricing-note reveal">Domeniul, hostingul și alte costuri externe se stabilesc separat, în funcție de proiect și buget. Prefer să discut clar fiecare pas înainte să promitem mai mult decât este nevoie.</p>
   </div>
 </section>
 
@@ -1054,38 +1783,34 @@ footer{
   <div class="section-inner">
     <div class="reveal">
       <div class="section-tag">05 / tehnologii</div>
-      <h2 class="section-title">Construit cu <em>instrumente</em><br>de top mondial</h2>
+      <h2 class="section-title">Lucrez cu <em>instrumente</em><br>potrivite proiectului</h2>
     </div>
     <div class="tech-scroll">
       <div class="tech-track" id="tech-track">
-        <span class="tech-pill">React.js</span>
-        <span class="tech-pill">Next.js</span>
+        <span class="tech-pill">HTML</span>
+        <span class="tech-pill">CSS</span>
+        <span class="tech-pill">JavaScript</span>
         <span class="tech-pill">WordPress</span>
         <span class="tech-pill">WooCommerce</span>
-        <span class="tech-pill">Node.js</span>
-        <span class="tech-pill">TypeScript</span>
-        <span class="tech-pill">Tailwind CSS</span>
-        <span class="tech-pill">Supabase</span>
-        <span class="tech-pill">PostgreSQL</span>
-        <span class="tech-pill">Stripe</span>
-        <span class="tech-pill">Cloudflare</span>
-        <span class="tech-pill">Vercel</span>
-        <span class="tech-pill">Figma</span>
-        <span class="tech-pill">SEO Pro</span>
         <span class="tech-pill">React.js</span>
         <span class="tech-pill">Next.js</span>
-        <span class="tech-pill">WordPress</span>
-        <span class="tech-pill">WooCommerce</span>
-        <span class="tech-pill">Node.js</span>
-        <span class="tech-pill">TypeScript</span>
-        <span class="tech-pill">Tailwind CSS</span>
-        <span class="tech-pill">Supabase</span>
-        <span class="tech-pill">PostgreSQL</span>
-        <span class="tech-pill">Stripe</span>
+        <span class="tech-pill">Figma</span>
+        <span class="tech-pill">Formspree</span>
+        <span class="tech-pill">Google Analytics</span>
         <span class="tech-pill">Cloudflare</span>
         <span class="tech-pill">Vercel</span>
+        <span class="tech-pill">HTML</span>
+        <span class="tech-pill">CSS</span>
+        <span class="tech-pill">JavaScript</span>
+        <span class="tech-pill">WordPress</span>
+        <span class="tech-pill">WooCommerce</span>
+        <span class="tech-pill">React.js</span>
+        <span class="tech-pill">Next.js</span>
         <span class="tech-pill">Figma</span>
-        <span class="tech-pill">SEO Pro</span>
+        <span class="tech-pill">Formspree</span>
+        <span class="tech-pill">Google Analytics</span>
+        <span class="tech-pill">Cloudflare</span>
+        <span class="tech-pill">Vercel</span>
       </div>
     </div>
   </div>
@@ -1101,33 +1826,33 @@ footer{
     <div class="guarantees reveal">
       <div class="guarantee-item">
         <span class="guarantee-index">01</span>
-        <div class="guarantee-title">Livrare rapidă</div>
-        <p class="guarantee-text">Termenele sunt respectate. Dacă întârzii, îți returnez 20% din prețul plătit.</p>
+        <div class="guarantee-title">Estimare realistă</div>
+        <p class="guarantee-text">Îți spun de la început ce pot face și cât durează, fără promisiuni pe care nu le pot susține.</p>
       </div>
       <div class="guarantee-item">
         <span class="guarantee-index">02</span>
         <div class="guarantee-title">Modificări incluse</div>
-        <p class="guarantee-text">3 runde de revizii incluse gratuit. Până ești 100% mulțumit de rezultat.</p>
+        <p class="guarantee-text">Ai 1-2 runde de ajustări incluse, în funcție de pachetul ales.</p>
       </div>
       <div class="guarantee-item">
         <span class="guarantee-index">03</span>
-        <div class="guarantee-title">Securitate totală</div>
-        <p class="guarantee-text">SSL, backup zilnic, protecție anti-spam și actualizări de securitate incluse.</p>
+        <div class="guarantee-title">Lansare asistată</div>
+        <p class="guarantee-text">Te ajut cu formularul, SSL-ul și publicarea site-ului într-un mod simplu și clar.</p>
       </div>
       <div class="guarantee-item">
         <span class="guarantee-index">04</span>
-        <div class="guarantee-title">100% Responsive</div>
-        <p class="guarantee-text">Arată perfect pe telefon, tabletă și desktop. Fiecare pixel, testat și perfect.</p>
+        <div class="guarantee-title">Responsive</div>
+        <p class="guarantee-text">Site-ul este gândit să arate bine pe telefon, tabletă și desktop.</p>
       </div>
       <div class="guarantee-item">
         <span class="guarantee-index">05</span>
-        <div class="guarantee-title">SEO optimizat</div>
-        <p class="guarantee-text">Site-ul tău apare în Google. Meta-taguri, sitemap, viteză optimizată — totul configurat.</p>
+        <div class="guarantee-title">SEO de bază</div>
+        <p class="guarantee-text">Setez structura de bază pentru titluri, descrieri și indexare corectă.</p>
       </div>
       <div class="guarantee-item">
         <span class="guarantee-index">06</span>
         <div class="guarantee-title">Comunicare clară</div>
-        <p class="guarantee-text">Actualizări zilnice, disponibil pe WhatsApp. Știi mereu exact unde suntem cu proiectul.</p>
+        <p class="guarantee-text">Primești răspuns pe WhatsApp sau email și update-uri la etapele importante.</p>
       </div>
     </div>
   </div>
@@ -1140,7 +1865,7 @@ footer{
       <div class="reveal">
         <div class="section-tag">07 / contact</div>
         <h2 class="section-title">Hai să construim<br><em>împreună</em></h2>
-        <p class="section-sub">Descrie-mi proiectul și îți trimit o ofertă personalizată în maxim 2 ore.</p>
+        <p class="section-sub">Dacă preferi contact direct, îmi poți scrie pe email sau WhatsApp și revin către tine cât pot de repede, de regulă în aceeași zi.</p>
         <div class="contact-info">
           <div class="contact-detail">
             <div class="contact-detail-label">Email</div>
@@ -1156,50 +1881,6 @@ footer{
           </div>
         </div>
       </div>
-      <form class="contact-form reveal"
-        action="https://formsubmit.co/lidiadobos03@gmail.com"
-        method="POST"
-        data-formsubmit
-        data-loading-message="Trimit cererea..."
-        data-success-message="Cererea a fost trimisă. Dacă este prima folosire, confirmă și emailul de activare primit."
-        data-error-message="Nu am reușit să trimit formularul acum. Încearcă din nou în câteva momente.">
-        <input type="hidden" name="_subject" value="WebCraft — cerere nouă din portofoliu"/>
-        <input type="hidden" name="_template" value="table"/>
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="sursa" value="WebCraft Portfolio"/>
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none"/>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Nume</label>
-            <input type="text" name="name" placeholder="Ion Popescu" required/>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="nume@email.ro" required/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Telefon</label>
-          <input type="tel" name="phone" placeholder="+40 7xx xxx xxx"/>
-        </div>
-        <div class="form-group">
-          <label>Pachet dorit</label>
-          <select id="package-select" name="package" required>
-            <option value="" disabled selected>Alege pachetul...</option>
-            <option value="Starter">Starter</option>
-            <option value="Business">Business</option>
-            <option value="E-Commerce">E-Commerce</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Descrie proiectul</label>
-          <textarea rows="4" name="message" placeholder="Spune-mi câteva cuvinte despre ce ai nevoie, domeniu, idee, exemple de site-uri care îți plac..." required></textarea>
-        </div>
-        <button class="btn-primary" style="width:100%;justify-content:center;display:flex;" type="submit">
-          Trimite cererea
-        </button>
-        <div class="form-status" data-form-status aria-live="polite"></div>
-      </form>
     </div>
   </div>
 </section>
@@ -1207,7 +1888,7 @@ footer{
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">WEBCRAFT</div>
-  <div class="footer-text">© 2025 WebCraft — Site-uri la cheie, de la concept la lansare.</div>
+  <div class="footer-text">© 2025 WebCraft — Site-uri clare, de la idee la lansare asistată.</div>
   <div class="footer-links">
     <a href="#">Termeni</a>
     <a href="#">Confidențialitate</a>
@@ -1217,7 +1898,23 @@ footer{
 
 </div>
 
-<script src="forms.js"></script>
+<div id="wc-robot">
+  <div id="wc-bubble" role="status" aria-live="polite" aria-atomic="true"></div>
+  <button id="wc-face" type="button" aria-label="Asistent WebCraft" aria-controls="wc-bubble" aria-expanded="false" title="Asistent WebCraft">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="5" y="7" width="18" height="14" rx="4" fill="#bf5fff" opacity="0.15"/>
+      <rect x="5" y="7" width="18" height="14" rx="4" stroke="#bf5fff" stroke-width="1.2" fill="none"/>
+      <rect class="robot-eye" x="9" y="11" width="3" height="4" rx="1.5" fill="#00f5ff"/>
+      <rect class="robot-eye" x="16" y="11" width="3" height="4" rx="1.5" fill="#00f5ff"/>
+      <rect x="10" y="17" width="8" height="2" rx="1" fill="#bf5fff" opacity="0.7"/>
+      <line x1="14" y1="7" x2="14" y2="4" stroke="#bf5fff" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="14" cy="3.5" r="1.5" fill="#00f5ff"/>
+      <rect x="2" y="12" width="3" height="5" rx="1.5" fill="#bf5fff" opacity="0.5"/>
+      <rect x="23" y="12" width="3" height="5" rx="1.5" fill="#bf5fff" opacity="0.5"/>
+    </svg>
+  </button>
+</div>
+
 <script>
 // ── PARTICLE CANVAS ──
 const canvas = document.getElementById('bg-canvas');
@@ -1332,13 +2029,268 @@ const counterObs=new IntersectionObserver(entries=>{
 const statsEl=document.querySelector('.stats-bar');
 if(statsEl)counterObs.observe(statsEl);
 
-function selectPackage(packageName){
-  const select=document.getElementById('package-select');
-  if(select){
-    select.value=packageName;
+function scrollToLeadForm(selectedPackage=''){
+  const section=document.getElementById('quick-contact');
+
+  if(section){
+    section.scrollIntoView({behavior:'smooth'});
   }
-  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
 }
+
+function selectPackage(packageName){
+  const presets={
+    'Starter':{step1:'prezentare',step2:['nimic'],step3:'saptamana'},
+    'Business':{step1:'prezentare',step2:['pages','blog','seo_basic','analytics','chat'],step3:'saptamana'},
+    'Magazin Start':{step1:'ecommerce',step2:['analytics'],step3:'saptamana'}
+  };
+
+  scrollToLeadForm(packageName);
+
+  if(window.quoteCalculator&&presets[packageName]){
+    window.quoteCalculator.applyPreset(presets[packageName]);
+  }
+}
+
+window.quoteCalculator=(function(){
+  const widget=document.getElementById('quote-widget');
+  if(!widget)return null;
+
+  const state={step1:null,step2:[],step3:null};
+  const progress=document.getElementById('quote-progress');
+  const steps=Array.from(widget.querySelectorAll('.quote-step'));
+  const result=document.getElementById('quote-result');
+  const nextStep1=document.getElementById('quote-next-1');
+  const nextStep2=document.getElementById('quote-next-2');
+  const nextStep3=document.getElementById('quote-next-3');
+  const backStep2=document.getElementById('quote-back-2');
+  const backStep3=document.getElementById('quote-back-3');
+  const breakdown=document.getElementById('quote-price-breakdown');
+  const totalPrice=document.getElementById('quote-total-price');
+  const totalDays=document.getElementById('quote-total-days');
+  const form=document.getElementById('quote-contact-form');
+  const successMsg=document.getElementById('quote-success-msg');
+  const errorMsg=document.getElementById('quote-error-msg');
+  const resetButton=document.getElementById('quote-reset');
+  const hiddenEstimate=document.getElementById('quote-hidden-estimare');
+  const hiddenSiteType=document.getElementById('quote-hidden-tip-site');
+  const hiddenFeatures=document.getElementById('quote-hidden-functionalitati');
+  const hiddenUrgency=document.getElementById('quote-hidden-urgenta');
+
+  function setReady(button,isReady){
+    if(!button)return;
+    button.classList.toggle('ready',isReady);
+    button.disabled=!isReady;
+  }
+
+  function showStep(stepNumber){
+    steps.forEach(step=>step.classList.remove('active'));
+    result.classList.remove('active');
+    const current=document.getElementById(`quote-step-${stepNumber}`);
+    if(current)current.classList.add('active');
+    progress.style.width=`${((stepNumber-1)/3)*100}%`;
+  }
+
+  function syncStep2State(){
+    state.step2=Array.from(widget.querySelectorAll('.quote-option[data-step="2"].selected')).map(option=>option.dataset.value);
+  }
+
+  function clearMessages(){
+    successMsg.classList.remove('active');
+    errorMsg.classList.remove('active');
+    form.style.display='flex';
+  }
+
+  function selectSingleOption(step,value){
+    const target=widget.querySelector(`.quote-option[data-step="${step}"][data-value="${value}"]`);
+    if(!target)return;
+
+    widget.querySelectorAll(`.quote-option[data-step="${step}"]`).forEach(option=>option.classList.remove('selected'));
+    target.classList.add('selected');
+
+    if(step==='1'){
+      state.step1=target;
+      setReady(nextStep1,true);
+    }
+
+    if(step==='3'){
+      state.step3=target;
+      setReady(nextStep3,true);
+    }
+  }
+
+  function setMultiSelections(values){
+    const uniqueValues=[...new Set(values||[])];
+    const allOptions=widget.querySelectorAll('.quote-option[data-step="2"]');
+
+    allOptions.forEach(option=>option.classList.remove('selected'));
+
+    if(uniqueValues.includes('nimic')){
+      const noneOption=widget.querySelector('.quote-option[data-step="2"][data-value="nimic"]');
+      if(noneOption)noneOption.classList.add('selected');
+      syncStep2State();
+      return;
+    }
+
+    uniqueValues.forEach(value=>{
+      const option=widget.querySelector(`.quote-option[data-step="2"][data-value="${value}"]`);
+      if(option)option.classList.add('selected');
+    });
+    syncStep2State();
+  }
+
+  function getOptionName(option){
+    return option.querySelector('.quote-option-name').textContent.trim();
+  }
+
+  function renderResult(){
+    if(!state.step1||!state.step3)return;
+
+    clearMessages();
+
+    const basePrice=parseInt(state.step1.dataset.price,10);
+    const baseDays=parseInt(state.step1.dataset.days,10);
+    const selectedExtras=Array.from(widget.querySelectorAll('.quote-option[data-step="2"].selected')).filter(option=>option.dataset.value!=='nimic');
+    const extraItems=selectedExtras.map(option=>({
+      name:getOptionName(option),
+      price:parseInt(option.dataset.price,10)
+    }));
+    const extrasTotal=extraItems.reduce((sum,item)=>sum+item.price,0);
+    const urgencyPrice=parseInt(state.step3.dataset.price,10);
+    const urgencyDays=parseInt(state.step3.dataset.days,10);
+    const total=basePrice+extrasTotal+urgencyPrice;
+    const deliveryDays=Math.max(2,baseDays+urgencyDays);
+    const selectedFeatureNames=selectedExtras.length
+      ? selectedExtras.map(option=>getOptionName(option)).join(', ')
+      : 'Fără extra';
+    const urgencyName=getOptionName(state.step3);
+
+    let html=`
+      <div class="quote-price-row">
+        <span class="quote-price-label">${getOptionName(state.step1)}</span>
+        <span class="quote-price-value">${basePrice} lei</span>
+      </div>`;
+
+    extraItems.forEach(item=>{
+      const label=item.price>0?`+${item.price} lei`:'Inclus';
+      html+=`
+      <div class="quote-price-row">
+        <span class="quote-price-label">${item.name}</span>
+        <span class="quote-price-value">${label}</span>
+      </div>`;
+    });
+
+    if(urgencyPrice!==0){
+      html+=`
+      <div class="quote-price-row">
+        <span class="quote-price-label">${urgencyPrice>0?'Supliment prioritate':'Reducere flexibilitate'}</span>
+        <span class="quote-price-value">${urgencyPrice>0?'+':''}${urgencyPrice} lei</span>
+      </div>`;
+    }
+
+    breakdown.innerHTML=html;
+    totalPrice.textContent=`~${total} lei`;
+    totalDays.textContent=`${deliveryDays} zile`;
+
+    hiddenEstimate.value=`Tip: ${getOptionName(state.step1)} | Funcționalități: ${selectedFeatureNames} | Termen: ${urgencyName} | Total: ~${total} lei | Livrare: ${deliveryDays} zile`;
+    hiddenSiteType.value=getOptionName(state.step1);
+    hiddenFeatures.value=selectedFeatureNames;
+    hiddenUrgency.value=urgencyName;
+
+    steps.forEach(step=>step.classList.remove('active'));
+    result.classList.add('active');
+    progress.style.width='100%';
+  }
+
+  widget.querySelectorAll('.quote-option').forEach(option=>{
+    option.addEventListener('click',()=>{
+      const step=option.dataset.step;
+      const isMulti=option.classList.contains('quote-option-multi');
+
+      if(isMulti){
+        if(option.dataset.value==='nimic'){
+          const shouldSelect=!option.classList.contains('selected');
+          widget.querySelectorAll('.quote-option[data-step="2"]').forEach(item=>item.classList.remove('selected'));
+          if(shouldSelect)option.classList.add('selected');
+          syncStep2State();
+          return;
+        }
+
+        const noneOption=widget.querySelector('.quote-option[data-step="2"][data-value="nimic"]');
+        if(noneOption)noneOption.classList.remove('selected');
+        option.classList.toggle('selected');
+        syncStep2State();
+        return;
+      }
+
+      selectSingleOption(step,option.dataset.value);
+    });
+  });
+
+  nextStep1.addEventListener('click',()=>showStep(2));
+  nextStep2.addEventListener('click',()=>showStep(3));
+  nextStep3.addEventListener('click',()=>renderResult());
+  backStep2.addEventListener('click',()=>showStep(1));
+  backStep3.addEventListener('click',()=>showStep(2));
+  resetButton.addEventListener('click',()=>showStep(1));
+
+  form.addEventListener('submit',async event=>{
+    event.preventDefault();
+
+    if(form.dataset.submitting==='true'||!form.reportValidity()){
+      return;
+    }
+
+    const submitButton=form.querySelector('[type="submit"]');
+    const originalText=submitButton?submitButton.textContent:'';
+
+    form.dataset.submitting='true';
+    errorMsg.classList.remove('active');
+
+    if(submitButton){
+      submitButton.disabled=true;
+      submitButton.textContent='Trimit cererea...';
+    }
+
+    try{
+      const response=await fetch(form.action,{
+        method:'POST',
+        body:new FormData(form),
+        headers:{Accept:'application/json'}
+      });
+
+      if(!response.ok){
+        throw new Error('Request failed');
+      }
+
+      form.reset();
+      form.style.display='none';
+      successMsg.classList.add('active');
+    }catch(error){
+      errorMsg.classList.add('active');
+    }finally{
+      form.dataset.submitting='false';
+
+      if(submitButton){
+        submitButton.disabled=false;
+        submitButton.textContent=originalText;
+      }
+    }
+  });
+
+  setReady(nextStep1,false);
+  setReady(nextStep2,true);
+  setReady(nextStep3,false);
+
+  return{
+    applyPreset(preset){
+      clearMessages();
+      selectSingleOption('1',preset.step1);
+      setMultiSelections(preset.step2);
+      selectSingleOption('3',preset.step3);
+      renderResult();
+    }
+  };
+})();
 
 // ── MOBILE NAV ──
 const mainNav=document.querySelector('nav');
@@ -1358,6 +2310,108 @@ if(mainNav&&mainNavToggle){
   window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMainMenu();});
   document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMainMenu();});
 }
+
+(function(){
+  const robot=document.getElementById('wc-robot');
+  const bubble=document.getElementById('wc-bubble');
+  const face=document.getElementById('wc-face');
+  if(!robot||!bubble||!face)return;
+
+  const messages={
+    hero:'Buna! Sunt asistentul <span class="accent">WebCraft</span>. Aici gasesti site-uri clare, bine facute si potrivite pentru un inceput bun online.',
+    services:'Alegi serviciul, iar eu ma ocup de partea tehnica si de o implementare <span class="accent">realista</span>, fara promisiuni inutile.',
+    process:'Proces clar, pe pasi simpli. Iti spun ce urmeaza si lucram fara <span class="accent">complicatii</span> inutile.',
+    portfolio:'Aici vezi proiecte <span class="accent">reale</span> din portofoliu, fiecare construit cu o directie vizuala diferita.',
+    pricing:'Preturi clare si pachete potrivite pentru proiecte pe care le pot livra <span class="accent">bine</span> de la capat la sfarsit.',
+    tech:'Folosesc instrumente <span class="accent">potrivite</span> proiectului, fara tehnologii complicate doar de dragul lor.',
+    garantii:'Lucrez transparent si prefer sa promit <span class="accent">realist</span>, apoi sa livrez bine.',
+    contact:'Descrie proiectul si primesti un raspuns clar, cu o oferta simpla si fara <span class="accent">obligatii</span>.',
+    default:'Daca ai intrebari, sunt aici. Iti explic rapid ce ti s-ar potrivi cel mai bine.'
+  };
+
+  const sectionMap=[
+    {id:'hero',key:'hero'},
+    {id:'quick-contact',key:'contact'},
+    {id:'services',key:'services'},
+    {id:'process',key:'process'},
+    {id:'portfolio',key:'portfolio'},
+    {id:'pricing',key:'pricing'},
+    {id:'tech',key:'tech'},
+    {id:'garantii',key:'garantii'},
+    {id:'contact',key:'contact'}
+  ];
+
+  let currentMsg='';
+  let hideTimer=null;
+  let idleTimer=null;
+  let isOpen=false;
+
+  function setExpanded(open){
+    face.setAttribute('aria-expanded',String(open));
+  }
+
+  function startIdleFloat(){
+    clearTimeout(idleTimer);
+    idleTimer=setTimeout(()=>robot.classList.add('idle'),2000);
+  }
+
+  function hideBubble(){
+    bubble.classList.remove('visible');
+    face.classList.remove('active');
+    setExpanded(false);
+    isOpen=false;
+    startIdleFloat();
+  }
+
+  function showBubble(html){
+    if(html===currentMsg&&isOpen)return;
+    currentMsg=html;
+    bubble.innerHTML=html;
+    bubble.classList.add('visible');
+    face.classList.add('active');
+    robot.classList.remove('idle');
+    setExpanded(true);
+    isOpen=true;
+    clearTimeout(hideTimer);
+    hideTimer=setTimeout(hideBubble,5000);
+  }
+
+  function getCurrentSection(){
+    const scrollPosition=window.scrollY+window.innerHeight*0.4;
+    for(let i=sectionMap.length-1;i>=0;i--){
+      const el=document.getElementById(sectionMap[i].id);
+      if(el&&el.offsetTop<=scrollPosition)return sectionMap[i].key;
+    }
+    return 'hero';
+  }
+
+  face.addEventListener('click',()=>{
+    if(isOpen){
+      hideBubble();
+      return;
+    }
+    const section=getCurrentSection();
+    showBubble(messages[section]||messages.default);
+  });
+
+  let scrollDebounce;
+  window.addEventListener('scroll',()=>{
+    clearTimeout(scrollDebounce);
+    scrollDebounce=setTimeout(()=>{
+      if(!isOpen)return;
+      const section=getCurrentSection();
+      const newMsg=messages[section]||messages.default;
+      if(newMsg!==currentMsg)showBubble(newMsg);
+    },200);
+  },{passive:true});
+
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&isOpen)hideBubble();
+  });
+
+  setTimeout(()=>showBubble(messages.hero),2000);
+  startIdleFloat();
+})();
 
 </script>
 </body>
