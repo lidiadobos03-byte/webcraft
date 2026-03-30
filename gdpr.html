@@ -147,11 +147,27 @@ h1{
   margin-top:1.5rem;
   display:flex;
   flex-wrap:wrap;
-  gap:1rem;
+  gap:.75rem;
 }
 .footer-links a{
   text-decoration:none;
-  color:var(--text-muted);
+  display:inline-flex;
+  align-items:center;
+  padding:.5rem .85rem;
+  border:1px solid rgba(0,245,255,0.18);
+  border-radius:999px;
+  background:rgba(0,245,255,0.04);
+  color:var(--text-main);
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  transition:border-color .18s ease,background .18s ease,color .18s ease;
+}
+.footer-links a:hover{
+  border-color:rgba(0,245,255,0.34);
+  background:rgba(0,245,255,0.08);
+  color:var(--neon-cyan);
 }
 @media (max-width:720px){
   .page-shell{width:min(960px,calc(100% - 1rem));padding:1rem 0 3rem;}
@@ -183,7 +199,7 @@ h1{
     <main class="content">
       <section class="card">
         <h2>1. Operator și contact</h2>
-        <p>În contextul acestui site, datele sunt administrate sub brandul <strong>WebCraft</strong>, folosind datele publice de contact afișate pe site. Pentru orice solicitare GDPR ne poți scrie la <a href="mailto:contact@webcraft.ro">contact@webcraft.ro</a> sau ne poți contacta la <a href="tel:+40740334757">0740 334 757</a>.</p>
+        <p>În contextul acestui site, datele sunt administrate sub brandul <strong>WebCraft</strong>, folosind datele publice de contact afișate pe site. Pentru orice solicitare GDPR ne poți scrie la <a href="mailto:contact@webcraft.ro">contact@webcraft.ro</a>.</p>
       </section>
 
       <section class="card">
@@ -284,7 +300,7 @@ h1{
 
     <div class="footer-links">
       <a href="index.html">Înapoi la site</a>
-      <a href="politica-confidentialitate.html">Vezi politica de confidențialitate</a>
+      <a href="politica-confidentialitate.html">Politica de confidențialitate</a>
     </div>
   </div>
 </body>

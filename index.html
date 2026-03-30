@@ -537,7 +537,7 @@ section{padding:6rem 2rem;}
 }
 .port-item{
   position:relative;overflow:hidden;
-  aspect-ratio:auto;min-height:200px;
+  aspect-ratio:auto;min-height:220px;
   background:var(--dark-bg);
   cursor:pointer;
   display:block;text-decoration:none;color:inherit;
@@ -559,8 +559,11 @@ section{padding:6rem 2rem;}
 .port-overlay{
   position:absolute;inset:0;
   display:flex;flex-direction:column;justify-content:space-between;
-  padding:1.8rem;
+  padding:1.55rem 1.55rem 1.95rem;
   opacity:1;
+}
+.port-item:not(:first-child) .port-overlay{
+  padding:1.35rem 1.55rem 3rem;
 }
 .port-topline{
   display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;
@@ -576,24 +579,24 @@ section{padding:6rem 2rem;}
   margin-top:.2rem;
 }
 .port-frame{
-  max-width:480px;
+  max-width:420px;
 }
 .port-title{
   font-family:var(--font-display);font-size:1.15rem;font-weight:700;
-  letter-spacing:.08em;margin-bottom:.65rem;
+  letter-spacing:.08em;line-height:1.15;margin-bottom:.45rem;
   color:var(--text-main);
 }
 .port-summary{
-  font-size:.88rem;color:var(--text-main);line-height:1.7;
-  max-width:42ch;margin-bottom:1rem;
+  font-size:.84rem;color:var(--text-main);line-height:1.5;
+  max-width:34ch;margin-bottom:.75rem;
 }
 .port-tech{
-  display:flex;flex-wrap:wrap;gap:.6rem;
+  display:flex;flex-wrap:wrap;gap:.45rem;
 }
 .port-tech span{
-  font-size:.68rem;color:var(--text-muted);
+  font-size:.62rem;color:var(--text-muted);
   letter-spacing:.08em;text-transform:uppercase;
-  padding:.35rem .7rem;border:1px solid rgba(255,255,255,0.08);
+  padding:.3rem .58rem;border:1px solid rgba(255,255,255,0.08);
   background:rgba(2,4,9,0.45);
 }
 
@@ -1078,6 +1081,23 @@ section{padding:6rem 2rem;}
   cursor:wait;
   filter:saturate(.85);
 }
+.quote-form-note{
+  margin-top:.1rem;
+  font-size:.78rem;
+  line-height:1.65;
+  color:var(--text-muted);
+}
+.quote-form-note a,
+.quote-error-msg a{
+  color:var(--neon-cyan);
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,245,255,0.28);
+}
+.quote-form-note a:hover,
+.quote-error-msg a:hover{
+  color:var(--text-main);
+  border-color:rgba(0,245,255,0.5);
+}
 .quote-success-msg,.quote-error-msg{
   display:none;
   margin-top:1rem;
@@ -1132,9 +1152,27 @@ footer{
   color:var(--neon-cyan);letter-spacing:.15em;
 }
 .footer-text{font-size:.75rem;color:var(--text-muted);}
-.footer-links{display:flex;gap:1.5rem;}
-.footer-links a{font-size:.75rem;color:var(--text-muted);text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:var(--neon-cyan);}
+.footer-links{
+  display:flex;flex-wrap:wrap;gap:.75rem;
+  justify-content:flex-end;
+}
+.footer-links a{
+  display:inline-flex;align-items:center;
+  padding:.52rem .9rem;
+  border:1px solid rgba(0,245,255,0.16);
+  border-radius:999px;
+  background:rgba(0,245,255,0.04);
+  font-size:.7rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-main);text-decoration:none;
+  transition:border-color .2s,background .2s,color .2s,transform .2s;
+}
+.footer-links a:hover{
+  color:var(--neon-cyan);
+  border-color:rgba(0,245,255,0.34);
+  background:rgba(0,245,255,0.08);
+  transform:translateY(-1px);
+}
 
 /* ── CURSOR ── */
 .cursor{
@@ -1203,6 +1241,7 @@ footer{
   .port-item:first-child{grid-row:auto;}
   .contact-layout{grid-template-columns:1fr;}
   footer{padding:1.75rem 1.25rem;flex-direction:column;gap:1rem;text-align:center;}
+  .footer-links{justify-content:center;}
 }
 @media(max-width:600px){
   .form-row{grid-template-columns:1fr;}
@@ -1211,7 +1250,7 @@ footer{
   .stat-item{border-right:none;border-bottom:1px solid var(--border-glow);}
   .stat-item:last-child{border-bottom:none;}
   .portfolio-grid{grid-template-columns:1fr;gap:1rem;background:transparent;}
-  .port-item,.port-item:first-child{min-height:280px;grid-row:auto;}
+  .port-item,.port-item:first-child{min-height:300px;grid-row:auto;}
   .service-card,.pricing-card,.guarantee-item{padding:1.5rem;}
   .process-steps{gap:1.25rem;}
   .pricing-note{text-align:left;}
@@ -1234,6 +1273,7 @@ footer{
   .btn-primary,.btn-secondary{width:100%;}
   .hero-badges{justify-content:flex-start;max-width:320px;margin-left:auto;margin-right:auto;}
   .port-overlay{padding:1.25rem;}
+  .port-item:not(:first-child) .port-overlay{padding:1.1rem 1.25rem 2.55rem;}
   .port-num{font-size:2rem;}
 }
 @media(pointer:coarse){
@@ -1500,12 +1540,13 @@ footer{
             </div>
             <textarea name="mesaj" rows="3" placeholder="Orice detaliu suplimentar (opțional)"></textarea>
             <button type="submit" class="quote-btn-submit">Trimite cererea - revin în aceeași zi</button>
+            <p class="quote-form-note">Dacă preferi contact direct, scrie oricând la <a href="mailto:contact@webcraft.ro?subject=Cerere%20site%20WebCraft">contact@webcraft.ro</a>.</p>
           </form>
           <div class="quote-success-msg" id="quote-success-msg">
             Mesaj trimis! Revin către tine în aceeași zi.
           </div>
           <div class="quote-error-msg" id="quote-error-msg">
-            Nu am reușit să trimit acum. Încearcă din nou în câteva momente.
+            Nu am reușit să trimit acum. Încearcă din nou în câteva momente sau scrie direct la <a href="mailto:contact@webcraft.ro?subject=Cerere%20site%20WebCraft">contact@webcraft.ro</a>.
           </div>
           <div class="quote-result-actions">
             <button class="quote-btn-reset" id="quote-reset" type="button">Reconfigurează estimarea</button>
@@ -1638,11 +1679,11 @@ footer{
           </div>
           <div class="port-frame">
             <div class="port-title">La Dolce Vita</div>
-            <p class="port-summary">Un concept rafinat pentru restaurant, construit în jurul atmosferei, rezervărilor și unei prezentări editoriale care pune experiența culinară în prim-plan.</p>
+            <p class="port-summary">Concept de restaurant rafinat, construit pentru atmosferă, rezervări rapide și o prezentare editorială memorabilă.</p>
             <div class="port-tech">
               <span>Restaurant</span>
               <span>Rezervări</span>
-              <span>Atmosferă elegantă</span>
+              <span>Atmosferă</span>
             </div>
           </div>
         </div>
@@ -1656,11 +1697,11 @@ footer{
           </div>
           <div class="port-frame">
             <div class="port-title">Nexus Corp</div>
-            <p class="port-summary">Prezență corporate curată, credibilă și clar structurată pentru o companie de consultanță orientată spre performanță și creștere.</p>
+            <p class="port-summary">Prezență corporate clară și credibilă pentru o companie de consultanță orientată spre performanță și creștere.</p>
             <div class="port-tech">
               <span>Corporate</span>
               <span>Strategy</span>
-              <span>Lead generation</span>
+              <span>Lead gen</span>
             </div>
           </div>
         </div>
@@ -1674,11 +1715,11 @@ footer{
           </div>
           <div class="port-frame">
             <div class="port-title">Velvet Store</div>
-            <p class="port-summary">Magazin online de modă cu imagini puternice, produse puse în valoare și o interfață care respiră eleganță contemporană.</p>
+            <p class="port-summary">Magazin online de modă cu imagini puternice, produse bine puse în valoare și o interfață elegantă.</p>
             <div class="port-tech">
               <span>Magazin online</span>
               <span>Fashion</span>
-              <span>Catalog clar</span>
+              <span>Catalog</span>
             </div>
           </div>
         </div>
@@ -1692,11 +1733,11 @@ footer{
           </div>
           <div class="port-frame">
             <div class="port-title">Lex Partner</div>
-            <p class="port-summary">Site juridic sobru și încrezător, gândit pentru reputație, claritate și relația de încredere dintre cabinet și client.</p>
+            <p class="port-summary">Site juridic sobru și sigur, construit pentru reputație, claritate și încredere încă din primul contact.</p>
             <div class="port-tech">
               <span>Law firm</span>
               <span>Authority</span>
-              <span>Client intake</span>
+              <span>Contact</span>
             </div>
           </div>
         </div>
@@ -1873,8 +1914,8 @@ footer{
   <div class="footer-logo">WEBCRAFT</div>
   <div class="footer-text">© 2025 WebCraft — Site-uri clare, de la idee la lansare asistată.</div>
   <div class="footer-links">
-    <a href="politica-confidentialitate.html">Confidențialitate</a>
-    <a href="gdpr.html">GDPR</a>
+    <a href="politica-confidentialitate.html">Politica de confidențialitate</a>
+    <a href="gdpr.html">GDPR / date personale</a>
   </div>
 </footer>
 
