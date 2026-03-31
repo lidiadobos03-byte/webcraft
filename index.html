@@ -722,7 +722,22 @@ section{padding:6rem 2rem;}
   pointer-events:none;
 }
 .contact-layout{max-width:720px;}
-.contact-form{margin-top:2rem;}
+.contact-form{
+  margin-top:2rem;
+  padding:1.4rem;
+  background:rgba(0,245,255,0.03);
+  border:1px solid rgba(0,245,255,0.12);
+}
+.contact-form .btn-primary{width:100%;margin-top:.35rem;}
+.contact-form textarea{min-height:140px;}
+.contact-form-note{
+  margin-top:1rem;
+  font-size:.78rem;
+  line-height:1.6;
+  color:var(--text-muted);
+}
+.contact-form-note a{color:var(--neon-cyan);text-decoration:none;}
+.contact-form-note a:hover{text-decoration:underline;}
 .form-status{
   margin-top:.85rem;font-size:.78rem;line-height:1.6;color:var(--text-muted);
 }
@@ -1518,7 +1533,7 @@ footer{
             <input type="hidden" name="functionalitati" id="quote-hidden-functionalitati"/>
             <input type="hidden" name="urgenta" id="quote-hidden-urgenta"/>
             <input type="text" name="nume" placeholder="Numele tău" required/>
-            <input type="email" name="email" placeholder="Email" required/>
+            <input type="email" name="email" placeholder="nume@email.com" required/>
             <input type="tel" name="telefon" placeholder="Telefon"/>
             <div class="quote-field-group">
               <label class="quote-field-label" for="quote-photos">Poze pentru site</label>
@@ -1540,13 +1555,13 @@ footer{
             </div>
             <textarea name="mesaj" rows="3" placeholder="Orice detaliu suplimentar (opțional)"></textarea>
             <button type="submit" class="quote-btn-submit">Trimite cererea - revin în aceeași zi</button>
-            <p class="quote-form-note">Dacă preferi contact direct, scrie oricând la <a href="mailto:contact@webcraft.ro?subject=Cerere%20site%20WebCraft">contact@webcraft.ro</a>.</p>
+            <p class="quote-form-note">Trimite cererea direct din formular și revin către tine cât pot de repede.</p>
           </form>
           <div class="quote-success-msg" id="quote-success-msg">
             Mesaj trimis! Revin către tine în aceeași zi.
           </div>
           <div class="quote-error-msg" id="quote-error-msg">
-            Nu am reușit să trimit acum. Încearcă din nou în câteva momente sau scrie direct la <a href="mailto:contact@webcraft.ro?subject=Cerere%20site%20WebCraft">contact@webcraft.ro</a>.
+            Nu am reușit să trimit acum. Încearcă din nou în câteva momente.
           </div>
           <div class="quote-result-actions">
             <button class="quote-btn-reset" id="quote-reset" type="button">Reconfigurează estimarea</button>
@@ -1889,12 +1904,33 @@ footer{
       <div class="reveal">
         <div class="section-tag">07 / contact</div>
         <h2 class="section-title">Hai să construim<br><em>împreună</em></h2>
-        <p class="section-sub">Dacă preferi contact direct, îmi poți scrie pe email sau mă poți suna și revin către tine cât pot de repede, de regulă în aceeași zi.</p>
-        <div class="contact-info">
-          <div class="contact-detail">
-            <div class="contact-detail-label">Email</div>
-            <div class="contact-detail-val"><a class="contact-link" href="mailto:contact@webcraft.ro">contact@webcraft.ro</a></div>
+        <p class="section-sub">Lasă-mi mesajul direct aici și revin către tine cât pot de repede, de regulă în aceeași zi.</p>
+        <form class="contact-form" id="direct-contact-form" action="https://formspree.io/f/xgopwrgg" method="POST">
+          <input type="hidden" name="_subject" value="WebCraft - mesaj nou din formularul de contact"/>
+          <input type="hidden" name="sursa_formular" value="Formular contact homepage"/>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Nume</label>
+              <input id="contact-name" name="nume" type="text" placeholder="Cum te numești?" required/>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" placeholder="nume@email.com" required/>
+            </div>
           </div>
+          <div class="form-group">
+            <label for="contact-phone">Telefon</label>
+            <input id="contact-phone" name="telefon" type="tel" placeholder="Opțional, dacă vrei să te sun"/>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Mesaj</label>
+            <textarea id="contact-message" name="mesaj" rows="5" placeholder="Spune-mi pe scurt ce ai nevoie" required></textarea>
+          </div>
+          <button class="btn-primary" type="submit">Trimite mesajul</button>
+          <p class="form-status" id="direct-contact-status" aria-live="polite"></p>
+          <p class="contact-form-note">Trimite mesajul direct din formular și revin cât pot de repede.</p>
+        </form>
+        <div class="contact-info">
           <div class="contact-detail">
             <div class="contact-detail-label">Telefon</div>
             <div class="contact-detail-val"><a class="contact-link" href="tel:+40740334757">0740 334 757</a></div>
@@ -2314,6 +2350,65 @@ window.quoteCalculator=(function(){
     }
   };
 })();
+
+const directContactForm=document.getElementById('direct-contact-form');
+if(directContactForm){
+  const directContactStatus=document.getElementById('direct-contact-status');
+  const directContactButton=directContactForm.querySelector('[type="submit"]');
+  const directContactButtonText=directContactButton?directContactButton.textContent:'';
+
+  directContactForm.addEventListener('submit',async event=>{
+    event.preventDefault();
+
+    if(directContactForm.dataset.submitting==='true'||!directContactForm.reportValidity()){
+      return;
+    }
+
+    directContactForm.dataset.submitting='true';
+
+    if(directContactButton){
+      directContactButton.disabled=true;
+      directContactButton.textContent='Trimit mesajul...';
+    }
+
+    if(directContactStatus){
+      directContactStatus.textContent='Trimit mesajul...';
+      directContactStatus.dataset.state='loading';
+    }
+
+    try{
+      const response=await fetch(directContactForm.action,{
+        method:'POST',
+        body:new FormData(directContactForm),
+        headers:{Accept:'application/json'}
+      });
+      const data=await response.json().catch(()=>({}));
+
+      if(!response.ok||data.success===false||data.success==='false'){
+        throw new Error(data.message||'Request failed');
+      }
+
+      directContactForm.reset();
+
+      if(directContactStatus){
+        directContactStatus.textContent='Mesaj trimis cu succes. Revin cât pot de repede.';
+        directContactStatus.dataset.state='success';
+      }
+    }catch(error){
+      if(directContactStatus){
+        directContactStatus.textContent='Nu am reușit să trimit acum. Încearcă din nou în câteva momente.';
+        directContactStatus.dataset.state='error';
+      }
+    }finally{
+      directContactForm.dataset.submitting='false';
+
+      if(directContactButton){
+        directContactButton.disabled=false;
+        directContactButton.textContent=directContactButtonText;
+      }
+    }
+  });
+}
 
 // ── MOBILE NAV ──
 const mainNav=document.querySelector('nav');
